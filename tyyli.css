@@ -1,0 +1,351 @@
+:root{
+  --paper:#FBFAF8; --paper-warm:#F3EFE8;
+  --ink:#16120E; --ink-soft:#6E675E; --rule:#E6E1D9;
+
+  /* Singlen aksenttiväri. Petroli: kylmä vastapari haalistuneelle valokuvalle. */
+  --accent:#0B6870; --accent-deep:#0A565C;
+
+  --serif:"EB Garamond","Hoefler Text",Georgia,serif;
+  --sans:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;
+  --measure:33rem; --air:clamp(5rem,12vh,11rem);
+  /* Valokeilan paikka kuvassa, suhdelukuna. Säädä näitä kahta. */
+  --xn:.49; --yn:.22;
+  --x:calc(var(--xn) * 100%); --y:calc(var(--yn) * 100%);
+  --s:max(101vw, 101svh);
+  --dim:0;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+  font-size:clamp(1.0625rem,.98rem + .42vw,1.25rem);line-height:1.62;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- Näyttämö ---------- */
+.stage{position:relative;height:100svh;min-height:32rem;overflow:hidden;background:#0b0908}
+/* Kuva ankkuroidaan hahmoon eikä keskipisteeseen, jotta hän pysyy kuvassa
+   myös leveällä näytöllä. clamp pitää reunat aina ruudun ulkopuolella. */
+.shot{position:absolute;left:50%;
+  top:clamp(calc(100svh - var(--s)), calc(40svh - var(--yn) * var(--s)), 0px);
+  width:var(--s);height:var(--s);
+  transform:translateX(-50%) scale(calc(1.04 - var(--dim)*.02));
+  transform-origin:var(--x) var(--y)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shot .base{filter:grayscale(.85) brightness(.3) contrast(1.08) sepia(.2)}
+.shot .lit{filter:brightness(1.06) saturate(1.08) contrast(1.02);
+  -webkit-mask-image:radial-gradient(circle at var(--x) var(--y),#000 0%,#000 4.5%,rgba(0,0,0,.5) 9%,transparent 17%);
+  mask-image:radial-gradient(circle at var(--x) var(--y),#000 0%,#000 4.5%,rgba(0,0,0,.5) 9%,transparent 17%);
+  animation:breathe 9s ease-in-out infinite alternate}
+@keyframes breathe{from{opacity:.68}to{opacity:1}}
+.veil{position:absolute;inset:0;
+  background:radial-gradient(ellipse 65% 55% at 50% 40%,transparent 0%,rgba(8,6,5,.3) 55%,rgba(8,6,5,.88) 100%);
+  opacity:calc(.6 + var(--dim)*.4)}
+.caption{position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:0 clamp(1.5rem,5vw,4.5rem) clamp(3.5rem,8vh,5.5rem);color:#fff;opacity:calc(1 - var(--dim)*.95)}
+.caption h1{font-size:clamp(2rem,1rem + 4.4vw,4.25rem);line-height:1.06;font-weight:400;
+  letter-spacing:-.02em;margin:0;max-width:16ch;text-wrap:balance;text-shadow:0 2px 44px rgba(0,0,0,.55)}
+.caption .eyebrow{color:rgba(255,255,255,.75);margin-bottom:1.1rem}
+.cue{position:absolute;left:50%;bottom:1.3rem;z-index:2;transform:translateX(-50%);
+  font-family:var(--sans);font-size:.5625rem;font-weight:500;letter-spacing:.36em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);animation:drift 3.4s ease-in-out infinite;opacity:calc(1 - var(--dim))}
+@keyframes drift{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
+
+.topbar{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;flex-wrap:wrap;align-items:baseline;
+  gap:1.25rem 2.5rem;padding:2rem clamp(1.5rem,5vw,4.5rem) 0;color:#fff;opacity:calc(1 - var(--dim)*.85)}
+.wordmark{font-family:var(--sans);font-size:.8125rem;font-weight:700;letter-spacing:.3em;
+  text-transform:uppercase;text-decoration:none;margin-right:auto;white-space:nowrap}
+.nav{display:flex;flex-wrap:wrap;gap:.6rem 1.75rem;font-family:var(--sans);font-size:.6875rem;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.nav a{text-decoration:none;color:rgba(255,255,255,.7);padding-bottom:.15rem;
+  border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.nav a:hover{color:#fff;border-bottom-color:var(--accent)}
+
+/* ---------- Aukeamat ---------- */
+.spread{display:grid;grid-template-columns:repeat(12,1fr);gap:2rem clamp(1.5rem,4vw,3.5rem);
+  align-items:center;padding:var(--air) clamp(1.5rem,5vw,4.5rem)}
+.spread > .text{grid-column:2 / span 5;max-width:var(--measure)}
+.spread > .aside{grid-column:8 / span 4}
+.spread.flip > .text{grid-column:7 / span 5}
+.spread.flip > .aside{grid-column:2 / span 4}
+.spread.mid > .text{grid-column:3 / span 7;max-width:38rem}
+.spread.wide > .text{grid-column:2 / span 10;max-width:none}
+
+.eyebrow{font-family:var(--sans);font-size:.6875rem;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft);margin:0 0 1.75rem}
+.title{font-size:clamp(1.95rem,1.2rem + 3vw,3.35rem);line-height:1.10;font-weight:400;
+  letter-spacing:-.014em;margin:0 0 1.5rem;text-wrap:balance}
+/* Otsikko, joka on leipätekstin kokoinen */
+h2.plain{font-size:1em;font-weight:400;line-height:1.62;margin:0 0 1.35em;letter-spacing:0}
+p{margin:0 0 1.35em}p:last-child{margin-bottom:0}
+
+.link{font-family:var(--sans);font-size:.6875rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;text-decoration:none;display:inline-block;padding-bottom:.35rem;
+  border-bottom:1px solid var(--rule);transition:border-color .25s,color .25s}
+.link:hover{border-bottom-color:var(--accent);color:var(--accent)}
+.btn{display:inline-block;font-family:var(--sans);font-size:.6875rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;text-decoration:none;padding:1.1rem 2.2rem;border:1px solid currentColor;
+  transition:background .3s,color .3s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- Singlen kenttä ---------- */
+.field{position:relative;isolation:isolate;color:#fff;
+  padding:clamp(5rem,13vh,9rem) clamp(1.5rem,5vw,4.5rem);
+  background-color:var(--accent-deep);
+  background-image:
+    radial-gradient(130% 95% at 8% 0%,   rgba(26,132,124,.58), transparent 58%),
+    radial-gradient(115% 85% at 96% 104%, rgba(3,40,58,.66),   transparent 60%),
+    radial-gradient(75% 60% at 62% 42%,  rgba(16,104,106,.35), transparent 70%)}
+.field::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27160%27%20height%3D%27160%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.8%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E");background-size:160px 160px;
+  opacity:.055;mix-blend-mode:overlay}
+.field > *{position:relative}
+.field .inner{display:grid;grid-template-columns:repeat(12,1fr);gap:2.5rem clamp(1.5rem,4vw,3.5rem);align-items:end}
+.field .text{grid-column:2 / span 6}
+.field .cover{grid-column:9 / span 3}
+.field .eyebrow{color:rgba(255,255,255,.75)}
+.field .song{font-size:clamp(2.25rem,1.2rem + 4.6vw,4.25rem);line-height:1.06;font-weight:400;
+  letter-spacing:-.02em;margin:0 0 1.5rem}
+.field .when{margin:0 0 2.5rem;color:rgba(255,255,255,.82)}
+.field .btn:hover{background:#fff;color:var(--accent-deep)}
+.field .cover img{width:100%;box-shadow:0 26px 64px rgba(0,0,0,.3)}
+.field .cap{font-family:var(--sans);font-size:.625rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.9rem}
+
+/* ---------- Levea kuva ---------- */
+.plate{position:relative;height:min(82svh,46rem);overflow:hidden;background:#0b0908}
+.plate img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04)}
+
+figure{margin:0}
+figcaption{font-family:var(--sans);font-size:.6875rem;line-height:1.6;letter-spacing:.06em;
+  color:var(--ink-soft);margin-top:.9rem}
+
+.index{list-style:none;margin:2.5rem 0 0;padding:0}
+.index li{border-top:1px solid var(--rule)}
+.index li:last-child{border-bottom:1px solid var(--rule)}
+.index a{display:block;padding:1.9rem 0;text-decoration:none;transition:color .25s}
+.index a:hover{color:var(--accent)}
+.texts{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,5vw,5rem);
+  list-style:none;margin:3rem 0 0;padding:0}
+.texts li{border-top:1px solid var(--rule)}
+.texts a{display:block;padding:2rem 0 2.25rem;text-decoration:none;transition:color .25s}
+.texts a:hover{color:var(--accent)}
+.texts .name{font-size:clamp(1.35rem,1.05rem + 1vw,1.9rem);line-height:1.24;display:block;
+  letter-spacing:-.008em}
+.texts .dek{display:block;margin-top:1rem;color:var(--ink-soft);font-size:.95em;line-height:1.55}
+.index .name{font-size:clamp(1.2rem,1rem + .7vw,1.55rem);line-height:1.3;display:block;text-wrap:balance}
+.index .dek{display:block;margin-top:.7rem;color:var(--ink-soft);font-size:.95em;line-height:1.55}
+
+.signup{margin-top:2rem;max-width:30rem}
+.signup form{display:flex;flex-wrap:wrap;gap:.75rem}
+.signup input[type=text],
+.signup input[type=email]{font-family:var(--sans);font-size:.8125rem;padding:1.05rem 1.1rem;
+  border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:0;
+  -webkit-appearance:none;appearance:none}
+.signup input[type=text]{flex:1 1 9rem}
+.signup input[type=email]{flex:1 1 13rem}
+.signup input:focus{border-color:var(--accent);outline:none}
+.signup button{font-family:var(--sans);font-size:.6875rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;padding:1.05rem 1.8rem;border:1px solid var(--ink);background:transparent;
+  color:var(--ink);cursor:pointer;border-radius:0;transition:background .3s,color .3s}
+.signup button:hover{background:var(--ink);color:var(--paper)}
+.fineprint{font-family:var(--sans);font-size:.6875rem;color:var(--ink-soft);margin-top:1.1rem}
+
+.footer{border-top:1px solid var(--rule);margin:0 clamp(1.5rem,5vw,4.5rem);padding:3rem 0 4rem;
+  display:flex;flex-wrap:wrap;gap:1.5rem 3rem;font-family:var(--sans);font-size:.6875rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.footer nav{display:flex;flex-wrap:wrap;gap:.75rem 1.75rem}
+.footer a{text-decoration:none;transition:color .25s}
+.footer a:hover{color:var(--accent)}
+.footer .last{margin-left:auto;text-transform:none;letter-spacing:.02em}
+
+.rise{opacity:0;transform:translateY(16px)}
+.rise.seen{opacity:1;transform:none;
+  transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1)}
+
+@media (prefers-reduced-motion:reduce){
+  .rise,.rise.seen{opacity:1;transform:none;transition:none}
+  .shot .lit{animation:none;opacity:1}.cue{animation:none}
+}
+@media (max-width:900px){
+  :root{--air:clamp(3.5rem,9vh,6rem)}
+  .spread,.field .inner{display:block}
+  .spread > .text,.spread.mid > .text,.spread > .aside,.field .text,.field .cover{max-width:none}
+  .spread > .aside{margin-top:3rem}
+  .field .cover{margin-top:3.5rem;max-width:17rem}
+  .footer .last{margin-left:0}
+  .plate{height:62svh}
+  .texts{grid-template-columns:1fr}
+  .shot .lit{-webkit-mask-image:radial-gradient(circle at var(--x) var(--y),#000 0%,#000 5.5%,rgba(0,0,0,.5) 11%,transparent 20%);
+    mask-image:radial-gradient(circle at var(--x) var(--y),#000 0%,#000 5.5%,rgba(0,0,0,.5) 11%,transparent 20%)}
+}
+
+/* ---------- Sivukohtaiset lisät ---------- */
+
+/* Sisäsivun kevyt yläosa, kun näyttämöä ei ole */
+.head{padding:2rem clamp(1.5rem,5vw,4.5rem) 0}
+.head .topbar{position:static;color:var(--ink);opacity:1;padding:0}
+.head .wordmark{color:var(--ink)}
+.head .nav a{color:var(--ink-soft)}
+.head .nav a:hover,.head .nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* Säkeistö: rivi kerrallaan, kuten painetussa miniesseessä */
+/* Rivi kerrallaan ladottu teksti. Kappaleväli on aina saman mittainen. */
+.verse p{margin:0 0 .55em}
+.verse p.gap{margin-bottom:1.55em}
+
+/* Tumma kertosäelohko */
+.dark{background:#0b0908;color:#fff;padding:clamp(6rem,20vh,13rem) clamp(1.5rem,5vw,4.5rem)}
+.dark .inner{max-width:38rem;margin-left:clamp(0rem,8.33vw,0rem)}
+.dark p{font-size:clamp(1.4rem,1rem + 2.4vw,2.6rem);line-height:1.36;margin:0 0 .28em;letter-spacing:-.01em}
+.dark p.hi{color:var(--accent)}
+
+/* Kuvalohkon kuvateksti */
+.plate figcaption{position:absolute;left:clamp(1.5rem,5vw,4.5rem);bottom:1.5rem;color:rgba(255,255,255,.8);
+  text-shadow:0 1px 20px rgba(0,0,0,.6);margin:0}
+
+/* Tekijätiedot ja pienet tietolistat */
+.credits{font-family:var(--sans);font-size:.8125rem;line-height:2.1;letter-spacing:.01em;
+  color:var(--ink-soft);margin:0}
+.credits strong{color:var(--ink);font-weight:500}
+
+/* Nostot */
+.pull{font-size:clamp(1.25rem,1rem + 1.1vw,1.75rem);line-height:1.42;margin:0 0 .9rem;
+  text-wrap:pretty;font-style:italic}
+.attrib{font-family:var(--sans);font-size:.6875rem;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-soft);margin:0}
+.quote + .quote{margin-top:3.5rem}
+
+/* Soittimen paikka */
+.embed{position:relative;aspect-ratio:16/9;background:var(--paper-warm)}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* Kuvaruudukko Medialle-sivulla */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:1rem}
+
+/* Yhden asian erotin */
+.rule{border:0;border-top:1px solid var(--rule);margin:0 clamp(1.5rem,5vw,4.5rem)}
+
+/* Kit-lomake */
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap}
+.signup .signup-form{display:flex;flex-wrap:wrap;gap:.75rem}
+.signup .formkit-alert{flex:1 0 100%;font-family:var(--sans);font-size:.8125rem;margin:.35rem 0 0}
+.signup .formkit-alert-error{color:var(--accent)}
+.signup .formkit-alert:empty{display:none}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr 1fr}
+}
+
+
+/* ---------- Sisäsivun otsikkokuva ---------- */
+
+.banner{position:relative;height:min(66svh,36rem);min-height:22rem;overflow:hidden;background:#0b0908}
+.banner > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.03)}
+.banner .shade{position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(8,6,5,.5) 0%,rgba(8,6,5,.12) 34%,rgba(8,6,5,.78) 100%)}
+.banner .topbar{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;flex-wrap:wrap;
+  align-items:baseline;gap:1.25rem 2.5rem;padding:2rem clamp(1.5rem,5vw,4.5rem) 0;color:#fff;opacity:1}
+.banner .nav a{color:rgba(255,255,255,.72)}
+.banner .nav a:hover,.banner .nav a[aria-current="page"]{color:#fff;border-bottom-color:var(--accent)}
+.banner .caption{position:absolute;left:0;right:0;bottom:0;z-index:2;color:#fff;
+  padding:0 clamp(1.5rem,5vw,4.5rem) clamp(2.5rem,6vh,4rem);opacity:1}
+.banner .eyebrow{color:rgba(255,255,255,.75);margin-bottom:1rem}
+.banner h1{font-size:clamp(2rem,1.1rem + 3.6vw,3.75rem);line-height:1.08;font-weight:400;
+  letter-spacing:-.018em;margin:0;max-width:20ch;text-wrap:balance;text-shadow:0 2px 40px rgba(0,0,0,.5)}
+
+@media (max-width:900px){ .banner{height:56svh} }
+
+.banner .when{margin:1.4rem 0 0;color:rgba(255,255,255,.85)}
+.banner .btn{margin-top:1.6rem}
+.banner .btn:hover{background:#fff;color:var(--ink)}
+.banner .caption p:last-child{margin-bottom:0}
+
+/* Väljempi aukeama, kun kuvan ja tekstin väliin halutaan ilmaa.
+   grid-row lukitsee molemmat samalle riville, vaikka kuva on HTML:ssä ensin. */
+.spread.airy > .text{grid-column:2 / span 5;grid-row:1}
+.spread.airy > .aside{grid-column:9 / span 3;grid-row:1}
+
+@media (max-width:900px){
+  .spread.airy > .aside{margin-top:0}
+  .spread.airy > .text{margin-top:4rem}
+}
+
+/* Kertosäelohko tasataan vasemmalle muun sivun tapaan */
+.dark{display:grid;grid-template-columns:repeat(12,1fr);gap:0 clamp(1.5rem,4vw,3.5rem)}
+.dark > *{grid-column:2 / span 9;max-width:24ch}
+@media (max-width:900px){ .dark{display:block} .dark > *{max-width:none} }
+
+/* Tekijätiedot sanojen perässä, hiusviivalla erotettuna */
+.colophon{border-top:1px solid var(--rule);margin-top:3rem;padding-top:1.75rem}
+.colophon .credits{line-height:1.95}
+
+/* Kaksi peräkkäistä tekstiosiota: edellisen alareunan ilma riittää,
+   muuten väliin kertyy tyhjää kaksinkertaisesti. */
+.spread + .spread{padding-top:0}
+
+/* Sävytetyn kaistan jälkeen tarvitaan silti oma ilma, koska kaistan
+   alareuna päättyy näkyvään rajaan eikä tyhjään tilaan. */
+.spread.tint + .spread{padding-top:var(--air)}
+
+/* Vaimea sävy omalle kaistalleen: valkoista ylhäällä ja alhaalla. */
+.spread.tint{background:var(--paper-warm);padding-top:var(--air)}
+.spread.tint .index li,
+.spread.tint .texts li{border-color:#DED7CB}
+.spread.tint .index li:last-child{border-bottom-color:#DED7CB}
+
+/* Ensimmäisen rivin yläpuolelta viiva pois: lista alkaa tekstistä,
+   ei kehyksestä. Erottimet rivien välissä säilyvät. */
+.texts li:nth-child(-n+2){border-top:0}
+
+@media (max-width:900px){
+  .texts li:nth-child(2){border-top:1px solid var(--rule)}
+  .spread.tint .texts li:nth-child(2){border-top-color:#DED7CB}
+}
+
+/* Lyhyt hiusviiva otsikon lisukkeena. Absoluuttinen sijoitus,
+   joten se ei kasvata otsikon ja tekstin väliä. */
+.title.marked{position:relative}
+.title.marked::after{
+  content:"";position:absolute;left:0;bottom:-.85em;
+  width:4.5rem;border-top:1px solid var(--ink);opacity:.55}
+
+/* Kertosäe paperilla: koko, kursiivi ja ilma erottavat. */
+.chorus{padding:clamp(6rem,18vh,11rem) clamp(1.5rem,5vw,4.5rem);
+  display:grid;grid-template-columns:repeat(12,1fr);gap:0 clamp(1.5rem,4vw,3.5rem)}
+.chorus > *{grid-column:2 / span 9;max-width:24ch}
+.chorus p{font-size:clamp(1.5rem,1.05rem + 2.5vw,2.85rem);line-height:1.24;
+  margin:0 0 .12em;letter-spacing:-.008em;font-style:italic}
+.chorus p.hi{color:var(--accent)}
+
+@media (max-width:900px){ .chorus{display:block} .chorus > *{max-width:none} }
+
+/* Kertosäkeet sanoituksessa kursiivilla */
+.verse .ker{font-style:italic}
+
+/* Ladattavat kuvat: hienovarainen vihje klikattavuudesta */
+.grid a{display:block;transition:opacity .25s ease}
+.grid a:hover{opacity:.82}
+
+/* Kitin skripti tuo omat tyylinsä. Nämä pitävät lomakkeen sivuston näköisenä. */
+.signup .formkit-form[data-uid]{font-family:var(--serif);background:transparent;
+  border:0;box-shadow:none;padding:0;margin:0;max-width:none}
+.signup .formkit-form[data-uid] *{box-sizing:border-box}
+.signup .formkit-form[data-uid] input[type=text],
+.signup .formkit-form[data-uid] input[type=email]{font-family:var(--sans);font-size:.8125rem;
+  padding:1.05rem 1.1rem;border:1px solid var(--rule);background:transparent;color:var(--ink);
+  border-radius:0;box-shadow:none;height:auto;margin:0}
+.signup .formkit-form[data-uid] button[data-element=submit]{font-family:var(--sans);
+  font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  padding:1.05rem 1.8rem;border:1px solid var(--ink);background:transparent;color:var(--ink);
+  border-radius:0;box-shadow:none;height:auto;margin:0}
+.signup .formkit-form[data-uid] button[data-element=submit]:hover{background:var(--ink);color:var(--paper)}
+.signup .formkit-alert-success{color:var(--ink)}
+
+/* Kitin injektoima onnistumisviesti sivuston tyyliin */
+.signup .formkit-alert{list-style:none;margin:.5rem 0 0;padding:0;border:0;background:none;
+  font-family:var(--serif);font-size:1em;color:var(--ink);text-align:left;width:auto}
+.signup .formkit-alert-success{color:var(--ink)}
+.signup .formkit-alert-error{color:var(--accent);font-family:var(--sans);font-size:.8125rem}
+.signup .formkit-powered-by-convertkit-container{display:none}
