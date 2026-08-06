@@ -147,3 +147,4 @@ lomakkeen asetuksista.
 Tilaa itse omalla osoitteella ja tarkista, että osoite ilmestyy Kitin
 tilaajalistalle. Vasta sen jälkeen kannattaa sulkea Squarespacen vanha
 lomake, jottei väliin jää hetkeä jolloin kumpikaan ei toimi.
+
