@@ -9,7 +9,7 @@
   --sans:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;
   --measure:33rem; --air:clamp(5rem,12vh,11rem);
   /* Valokeilan paikka kuvassa, suhdelukuna. Säädä näitä kahta. */
-  --xn:.49; --yn:.22;
+  --xn:.505; --yn:.22;
   --x:calc(var(--xn) * 100%); --y:calc(var(--yn) * 100%);
   --s:max(101vw, 101svh);
   --dim:0;
@@ -42,10 +42,10 @@ a{color:inherit}
   background:radial-gradient(ellipse 65% 55% at 50% 40%,transparent 0%,rgba(8,6,5,.3) 55%,rgba(8,6,5,.88) 100%);
   opacity:calc(.6 + var(--dim)*.4)}
 .caption{position:absolute;left:0;right:0;bottom:0;z-index:2;
-  padding:0 clamp(1.5rem,5vw,4.5rem) clamp(3.5rem,8vh,5.5rem);color:#fff;opacity:calc(1 - var(--dim)*.95)}
+  padding:0 clamp(1.5rem,5vw,4.5rem) clamp(5.5rem,13vh,9rem);color:#fff;opacity:calc(1 - var(--dim)*.95)}
 .caption h1{font-size:clamp(2rem,1rem + 4.4vw,4.25rem);line-height:1.06;font-weight:400;
   letter-spacing:-.02em;margin:0;max-width:16ch;text-wrap:balance;text-shadow:0 2px 44px rgba(0,0,0,.55)}
-.caption .eyebrow{color:rgba(255,255,255,.75);margin-bottom:1.1rem}
+.caption .eyebrow{color:rgba(255,255,255,.85);font-size:.8125rem;letter-spacing:.2em;margin-bottom:1.25rem}
 .cue{position:absolute;left:50%;bottom:1.3rem;z-index:2;transform:translateX(-50%);
   font-family:var(--sans);font-size:.5625rem;font-weight:500;letter-spacing:.36em;text-transform:uppercase;
   color:rgba(255,255,255,.5);animation:drift 3.4s ease-in-out infinite;opacity:calc(1 - var(--dim))}
@@ -349,3 +349,15 @@ figcaption{font-family:var(--sans);font-size:.6875rem;line-height:1.6;letter-spa
 .signup .formkit-alert-success{color:var(--ink)}
 .signup .formkit-alert-error{color:var(--accent);font-family:var(--sans);font-size:.8125rem}
 .signup .formkit-powered-by-convertkit-container{display:none}
+
+/* Esittely vasemmalle, tekstinostot omaksi ryhmäkseen oikealle */
+.spread.split{align-items:start}
+.spread.split > .text{grid-column:2 / span 4;grid-row:1;max-width:none}
+.spread.split > .list{grid-column:7 / span 5;grid-row:1}
+.spread.split .texts{grid-template-columns:1fr;margin-top:1.25rem}
+.spread.split .texts li:nth-child(2){border-top:1px solid var(--rule)}
+.spread.split .texts .name{font-size:clamp(1.15rem,1rem + .55vw,1.45rem)}
+
+@media (max-width:900px){
+  .spread.split > .list{margin-top:3.5rem}
+}

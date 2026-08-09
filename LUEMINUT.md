@@ -65,6 +65,24 @@ Kahdessa kohdassa lukee "Julkaistaan 21. elokuuta 2026" ja napissa
 "Kuuntele". Muuta ei tarvitse tehdä — sivustolla ei ole päivämääriä eikä
 uutisosiota, joten se ei vanhene siinä välissä kun seuraavaa laulua tehdään.
 
+## Etusivun hero on kampanjakohtainen
+
+Etusivun ylin osio — luokkakuva, valokeila ja lause *Se mitä piilotat
+muilta on kauneinta mitä sus on* — on tehty esikoissinglen kampanjaa
+varten. Lause on kyseisen laulun kertosäettä.
+
+Kun kampanja on ohi, hero kannattaa vaihtaa. Kaksi suuntaa:
+
+- **Seuraavan julkaisun ympärille.** Uusi kuva ja uusi lause, sama
+  rakenne. Valokeilan paikkaa ohjaavat `tyyli.css`:n arvot `--xn` ja
+  `--yn`, ja ne toimivat vain luokkakuvan kanssa — muun kuvan kohdalla
+  valokeila kannattaa poistaa kokonaan.
+- **Pysyvämpään muotoon.** Lause, joka puhuu koko musiikista eikä yhdestä
+  laulusta, esimerkiksi kaksiosaisena: väite ja sen kääntävä vastaus.
+
+Sama lause on nyt myös biisisivun kertosäelohkossa. Kun hero vaihtuu,
+kertosäe jää sinne yksin, mikä on sen oikea paikka.
+
 ## Seuraava single
 
 Kolme vaihetta:
@@ -147,4 +165,3 @@ lomakkeen asetuksista.
 Tilaa itse omalla osoitteella ja tarkista, että osoite ilmestyy Kitin
 tilaajalistalle. Vasta sen jälkeen kannattaa sulkea Squarespacen vanha
 lomake, jottei väliin jää hetkeä jolloin kumpikaan ei toimi.
-
