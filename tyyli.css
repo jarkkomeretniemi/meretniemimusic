@@ -361,3 +361,15 @@ figcaption{font-family:var(--sans);font-size:.6875rem;line-height:1.6;letter-spa
 @media (max-width:900px){
   .spread.split > .list{margin-top:3.5rem}
 }
+
+/* Medialle-sivun sisällysluettelo */
+.sisallys{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem 1.75rem;
+  margin:2.5rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--rule)}
+.sisallys a{font-family:var(--sans);font-size:.6875rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  color:var(--ink-soft);padding-bottom:.25rem;
+  border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.sisallys a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* Ankkurikohteet eivät jää yläreunan taakse */
+[id]{scroll-margin-top:2rem}
