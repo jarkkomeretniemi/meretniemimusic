@@ -19,7 +19,10 @@
 <section class="banner">
   <header class="topbar">
     <a class="wordmark" href="index.html">Meretniemi</a>
-    <nav class="nav" aria-label="Päävalikko">
+    <button class="valikko-nappi" aria-expanded="false" aria-controls="paavalikko" aria-label="Valikko">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="paavalikko" aria-label="Päävalikko">
       <a href="laulut.html" aria-current="page">Laulut</a>
       <a href="tarina.html">Tarina</a>
       <a href="pyhakoulu.html">Pyhäkoulu</a>
@@ -49,12 +52,22 @@
 </main>
 
 <footer class="footer">
-  <nav aria-label="Some">
-    <a href="https://www.instagram.com/jarkkotuukka">Instagram</a>
-    <a href="https://www.tiktok.com/@meretniemimusic">TikTok</a>
-    <a href="https://www.youtube.com/@meretniemimusic">YouTube</a>
-    <a href="https://www.facebook.com/meretniemimusic">Facebook</a>
-    <a href="https://www.threads.net/@jarkkotuukka">Threads</a>
+  <nav class="some" aria-label="Some">
+    <a href="https://www.instagram.com/meretniemimusic" aria-label="Instagram" title="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@meretniemimusic" aria-label="TikTok" title="TikTok">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3v11.4a3.4 3.4 0 1 1-2.8-3.35"/><path d="M14.2 3c.4 2.4 2 4 4.3 4.2"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@meretniemimusic" aria-label="YouTube" title="YouTube">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5"/><path d="M10.2 9.2l5 2.8-5 2.8z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/meretniemimusic" aria-label="Facebook" title="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 22V13h2.7l.5-3.3h-3.2V7.6c0-.95.3-1.6 1.7-1.6h1.7V3.1A22 22 0 0 0 15.6 3c-2.5 0-4.2 1.5-4.2 4.3v2.4H8.6V13h2.8v9"/></svg>
+    </a>
+    <a href="https://www.threads.net/@jarkkotuukka" aria-label="Threads" title="Threads">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 11.6c-2.6-1.1-5.6-1-6.6.9-.7 1.4.2 2.9 1.8 3 1.9.1 3-1.4 3.1-4.2.2-3.2-1-4.6-2.4-4.9"/><path d="M18.9 7.3C17.7 4.9 15.4 3.6 12.2 3.6 7.3 3.6 4.4 6.9 4.4 12s2.9 8.4 7.8 8.4c4.2 0 6.6-2.3 7.1-5.1.4-2.3-.6-4.3-2.9-5.3"/></svg>
+    </a>
   </nav>
   <nav aria-label="Lisää">
     <a href="biiseja-muille.html">Biisejä muille</a>

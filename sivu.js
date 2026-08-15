@@ -20,3 +20,14 @@
 
   items.forEach(function (el) { io.observe(el); });
 })();
+
+// Hampurilaisvalikko kapealla näytöllä
+(function () {
+  var nappi = document.querySelector(".valikko-nappi");
+  var nav = document.getElementById("paavalikko");
+  if (!nappi || !nav) return;
+  nappi.addEventListener("click", function () {
+    var auki = nav.classList.toggle("auki");
+    nappi.setAttribute("aria-expanded", auki ? "true" : "false");
+  });
+})();
