@@ -36,7 +36,21 @@ Medialle-sivulla on nyt:
 Jos vaihdat kuvia, korvaa tiedosto samalla nimellä kansiossa
 `kuvat/hires/` ja aja paketti uudelleen.
 
-## 3. Verkkotunnus
+## 3. Äänitiedostot — tehty
+
+Medialle-sivulla on soitin ja kaksi latausta: MP3 320 kbps (6,6 Mt) ja
+FLAC 44,1 kHz / 16 bit (16,5 Mt). Ne ovat kansiossa `aani/`.
+
+FLAC on häviötön eli bittitarkka kopio masterista — tarkistettu. WAV olisi
+ollut 29 Mt eikä olisi mahtunut GitHubin 25 Mt:n rajaan selainlatauksessa.
+
+Masteroijalta tuli kolme versiota. Sivustolla on 44,1/16, joka on
+levystandardi. Korkeammat versiot (48/24 ja 96/24) sekä alkuperäinen WAV
+kannattaa pitää tallessa ja lähettää pyynnöstä.
+
+Huomaa että kappale on ladattavissa jo ennen julkaisupäivää.
+
+## 4. Verkkotunnus
 
 Verkkotunnus on Domainhotellissa, joten Squarespacen voi irtisanoa
 vapaasti. **Tee DNS-muutos vasta kun sivusto toimii GitHubissa.**
@@ -55,7 +69,7 @@ Settings → Pages → Custom domain → `meretniemimusic.fi` ja rasti
 
 Tee tämä muutama päivä ennen 21.8., ei samana aamuna.
 
-## 4. Julkaisupäivänä
+## 5. Julkaisupäivänä
 
 Biisisivulla `kauneinta-mita-sus-on.html`:
 
@@ -67,7 +81,7 @@ Biisisivulla `kauneinta-mita-sus-on.html`:
 
 Sama nappiteksti myös etusivulla ja `laulut.html`-sivulla.
 
-## 5. Myöhemmin
+## 6. Myöhemmin
 
 - Threadsin osoite vaihtuu: etsi ja korvaa `threads.net/@jarkkotuukka`
 - Spotify-profiilin linkki alatunnisteeseen kun se on julkinen

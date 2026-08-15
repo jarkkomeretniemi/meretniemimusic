@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /medialle.html
+Disallow: /tiedote.html
+
+Sitemap: https://meretniemimusic.fi/sitemap.xml
