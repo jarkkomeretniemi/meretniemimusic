@@ -1,0 +1,20 @@
+KUUNTELUSIVU — käyttöönotto
+============================
+
+1. Nimeä tämä kansio arvaamattomaksi ennen julkaisua, esim.
+   kuuntelu-x7k2m9  (jaa linkki vain uutiskirjeessä).
+
+2. Pudota kansio sivustosi juureen. Osoitteeksi tulee esim.
+   https://meretniemimusic.fi/kuuntelu-x7k2m9/
+
+3. Lisää biisin mp3 TÄHÄN samaan kansioon nimellä:
+   kauneinta.mp3
+   (tai muuta index.html:n <source src=...> vastaamaan tiedostonimeä)
+
+4. Kansi haetaan automaattisesti sivuston juuresta: /kuvat/kansi.jpg
+   — ei tarvitse kopioida tähän.
+
+Seuraaville julkaisuille: avaa index.html ja hae sana  MUUTA:
+Niitä on neljä — biisin nimi, julkaisupäivä, mp3-tiedosto ja aksenttiväri.
+
+Sivu on merkitty noindex, eikä se näy navigaatiossa tai sitemapissa.
