@@ -13,7 +13,7 @@
      Uudelleenkäyttö jokaiselle julkaisulle: muuta vain nämä neljä kohtaa.
        1) <title> ja biisin nimi (.song)      → hae "MUUTA:"
        2) julkaisupäivä (.release)            → hae "MUUTA:"
-       3) audiotiedosto (<source src=...>)    → hae "MUUTA:"
+       3) audiotiedosto (<audio src=...>)     → hae "MUUTA:"
        4) aksenttiväri (--accent / -deep)     → petroli nyt; vaihda kanteen
 
      Sijoitus: pudota tämä kansio sivuston juureen omalla arvaamattomalla
@@ -65,13 +65,14 @@ a{color:inherit}
 ::selection{background:var(--accent);color:#fff}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
 
-/* ---------- Yläpalkki: pelkkä nimimerkki ---------- */
+/* ---------- Nimimerkki: sama leikkaus ja sijainti kuin index-sivun herossa ---------- */
 .topbar{
-  padding:2rem clamp(1.5rem,5vw,4.5rem) 0;
+  padding:clamp(2.5rem,7vh,4.5rem) clamp(1.5rem,6vw,5.5rem) 0;
 }
 .wordmark{
   font-family:var(--sans);
-  font-size:.8125rem;
+  font-size:.875rem;
+  font-weight:500;
   letter-spacing:.34em;
   text-transform:uppercase;
   text-decoration:none;
@@ -147,74 +148,14 @@ body.playing .cover::before{opacity:1;animation:breathe 9s ease-in-out infinite 
   text-wrap:balance;
 }
 
-/* ---------- Soitin ---------- */
-.player{
-  background:var(--paper-warm);
-  border:1px solid var(--rule);
-  padding:1.5rem 1.5rem 1.35rem;
-  display:flex;
-  align-items:center;
-  gap:1.15rem;
-  text-align:left;
+/* ---------- Soitin: natiivi selainsoitin, kuten Medialle-sivulla ---------- */
+audio{
+  width:100%;
+  max-width:30rem;
+  margin:0 auto;
+  display:block;
 }
-.play{
-  flex:0 0 auto;
-  width:3.5rem;
-  height:3.5rem;
-  border-radius:50%;
-  border:0;
-  background:var(--accent);
-  color:#fff;
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-  transition:background .2s ease,transform .1s ease;
-}
-.play:hover{background:var(--accent-deep)}
-.play:active{transform:scale(.96)}
-.play svg{width:1.4rem;height:1.4rem;fill:currentColor;pointer-events:none}
-.play .ico-pause{display:none}
-body.playing .play .ico-play{display:none}
-body.playing .play .ico-pause{display:block}
-
-.meter{flex:1;min-width:0}
-.bar{
-  position:relative;
-  height:.5rem;
-  border-radius:99px;
-  background:var(--rule);
-  cursor:pointer;
-  touch-action:none;
-}
-.bar:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.fill{
-  position:absolute;
-  inset:0 auto 0 0;
-  width:0%;
-  border-radius:99px;
-  background:var(--accent);
-}
-.knob{
-  position:absolute;
-  top:50%;
-  left:0%;
-  width:.85rem;
-  height:.85rem;
-  border-radius:50%;
-  background:var(--accent-deep);
-  transform:translate(-50%,-50%);
-  box-shadow:0 0 0 3px var(--paper-warm);
-}
-.times{
-  display:flex;
-  justify-content:space-between;
-  font-family:var(--sans);
-  font-size:.7rem;
-  letter-spacing:.04em;
-  font-variant-numeric:tabular-nums;
-  color:var(--ink-soft);
-  margin-top:.7rem;
-}
+audio::-webkit-media-controls-panel{background:var(--paper)}
 
 /* ---------- Julkaisurivi ---------- */
 .release{
@@ -222,20 +163,6 @@ body.playing .play .ico-pause{display:block}
   color:var(--ink-soft);
   font-size:.95rem;
 }
-.release .link-out{
-  display:inline-block;
-  margin-top:.9rem;
-  font-family:var(--sans);
-  font-size:.6875rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  text-decoration:none;
-  color:var(--ink);
-  padding-bottom:.2rem;
-  border-bottom:1px solid var(--accent);
-  transition:color .2s ease;
-}
-.release .link-out:hover{color:var(--accent)}
 
 /* ---------- Alapalkki ---------- */
 .foot{
@@ -248,10 +175,6 @@ body.playing .play .ico-pause{display:block}
   color:var(--ink-soft);
 }
 
-@media (max-width:30rem){
-  .player{gap:1rem;padding:1.25rem}
-  .play{width:3.1rem;height:3.1rem}
-}
 @media (prefers-reduced-motion:reduce){
   body.playing .cover::before{animation:none}
   *{transition:none!important}
@@ -279,110 +202,33 @@ body.playing .play .ico-pause{display:block}
       <p class="intro">Voi kun et himmentäisi enää tota loistoa sussa<br>
         ei sinivuokkokaan voi elää terälehdet nupussa</p>
 
-      <div class="player">
-        <button class="play" id="play" aria-label="Toista" aria-pressed="false">
-          <svg class="ico-play"  viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
-        </button>
-
-        <div class="meter">
-          <div class="bar" id="bar" role="slider" tabindex="0"
-               aria-label="Kohta laulussa" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="fill" id="fill"></div>
-            <div class="knob" id="knob"></div>
-          </div>
-          <div class="times">
-            <span id="cur">0:00</span>
-            <span id="dur">–:––</span>
-          </div>
-        </div>
-      </div>
+      <!-- MUUTA: audiotiedosto -->
+      <audio id="audio" controls preload="metadata"
+             controlsList="nodownload" oncontextmenu="return false"
+             src="Meretniemi-Kauneinta-mita-sus-on.mp3">
+        Selaimesi ei tue äänisoitinta.
+      </audio>
 
       <p class="release">
         <!-- MUUTA: julkaisupäivä -->
-        Julkaisupäivä 21. elokuuta 2026.<br>
-        <a class="link-out" href="https://ffm.to/eooaa7e">Suoratoistopalvelut</a>
+        Julkaisupäivä 21. elokuuta 2026.
       </p>
     </div>
   </main>
 
   <footer class="foot">Meretniemi · Has Been Records</footer>
 
-  <!-- controlsList/nodownload piilottaa selaimen lataa-napin; ei este osaajalle,
-       mutta pitää sivun siistinä. Varsinainen audio on piilossa. -->
-  <audio id="audio" preload="metadata" controlsList="nodownload"
-         oncontextmenu="return false" style="display:none">
-    <!-- MUUTA: audiotiedoston polku -->
-    <source src="kauneinta.mp3" type="audio/mpeg">
-  </audio>
-
 <script>
-(function(){
-  const a    = document.getElementById('audio');
-  const play = document.getElementById('play');
-  const bar  = document.getElementById('bar');
-  const fill = document.getElementById('fill');
-  const knob = document.getElementById('knob');
-  const curEl= document.getElementById('cur');
-  const durEl= document.getElementById('dur');
-
-  const fmt = s => {
-    if(!isFinite(s)) return '–:––';
-    s = Math.max(0, Math.floor(s));
-    return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0');
-  };
-  const setUI = pct => {
-    pct = Math.min(100, Math.max(0, pct));
-    fill.style.width = pct + '%';
-    knob.style.left  = pct + '%';
-    bar.setAttribute('aria-valuenow', Math.round(pct));
-  };
-
-  play.addEventListener('click', () => { a.paused ? a.play() : a.pause(); });
-
-  a.addEventListener('play',  () => {
-    document.body.classList.add('playing');
-    play.setAttribute('aria-pressed','true');
-    play.setAttribute('aria-label','Keskeytä');
-  });
-  a.addEventListener('pause', () => {
-    document.body.classList.remove('playing');
-    play.setAttribute('aria-pressed','false');
-    play.setAttribute('aria-label','Toista');
-  });
-  a.addEventListener('loadedmetadata', () => { durEl.textContent = fmt(a.duration); });
-  a.addEventListener('timeupdate', () => {
-    curEl.textContent = fmt(a.currentTime);
-    if(a.duration) setUI(a.currentTime / a.duration * 100);
-  });
-  a.addEventListener('ended', () => setUI(0));
-
-  // Kelaus: klikkaus + veto
-  const seekTo = clientX => {
-    const r = bar.getBoundingClientRect();
-    const pct = (clientX - r.left) / r.width;
-    if(a.duration){ a.currentTime = Math.min(1, Math.max(0, pct)) * a.duration; }
-  };
-  let dragging = false;
-  bar.addEventListener('pointerdown', e => {
-    dragging = true; bar.setPointerCapture(e.pointerId); seekTo(e.clientX);
-  });
-  bar.addEventListener('pointermove', e => { if(dragging) seekTo(e.clientX); });
-  bar.addEventListener('pointerup',   () => { dragging = false; });
-
-  // Näppäimistö: bar fokuksessa nuolet kelaavat
-  bar.addEventListener('keydown', e => {
-    if(!a.duration) return;
-    const step = a.duration / 20;
-    if(e.key === 'ArrowRight'){ a.currentTime = Math.min(a.duration, a.currentTime + step); e.preventDefault(); }
-    if(e.key === 'ArrowLeft') { a.currentTime = Math.max(0, a.currentTime - step); e.preventDefault(); }
-  });
-
-  // Väli toistaa/keskeyttää (paitsi kun fokus on kelauspalkissa)
-  document.addEventListener('keydown', e => {
-    if(e.code === 'Space' && e.target !== bar){ e.preventDefault(); a.paused ? a.play() : a.pause(); }
-  });
-})();
+  // Sytyttää valokeilan kannen taakse, kun laulu soi.
+  (function(){
+    var a = document.getElementById('audio');
+    if(!a) return;
+    var on  = function(){ document.body.classList.add('playing'); };
+    var off = function(){ document.body.classList.remove('playing'); };
+    a.addEventListener('play', on);
+    a.addEventListener('pause', off);
+    a.addEventListener('ended', off);
+  })();
 </script>
 </body>
 </html>

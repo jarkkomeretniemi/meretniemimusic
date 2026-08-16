@@ -8,7 +8,7 @@ KUUNTELUSIVU — käyttöönotto
    https://meretniemimusic.fi/kuuntelu-x7k2m9/
 
 3. Lisää biisin mp3 TÄHÄN samaan kansioon nimellä:
-   kauneinta.mp3
+   Meretniemi-Kauneinta-mita-sus-on.mp3
    (tai muuta index.html:n <source src=...> vastaamaan tiedostonimeä)
 
 4. Kansi haetaan automaattisesti sivuston juuresta: /kuvat/kansi.jpg
