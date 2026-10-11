@@ -94,88 +94,13 @@
       <p class="eyebrow">Esikoissingle</p>
       <h2 class="title">Kauneinta mitä sus on</h2>
       <p>Tunnistatko itsesi tai jonkun tuttusi biisistä?</p>
-      <!-- ===== OSA 1: SOITIN – KOPIOI TÄSTÄ ===== -->
-<style>
-  .mn-kuuntele { margin: 24px 0 32px; }
-  .mn-kuuntele iframe { display: block; width: 100%; height: 152px; border: 0; border-radius: 12px; }
-  .mn-kuuntele .mn-muut { margin: 12px 0 0; font-size: 0.9em; opacity: 0.8; }
-  .mn-kuuntele .mn-muut a { color: inherit; }
-</style>
-<div class="mn-kuuntele">
-  <iframe src="https://open.spotify.com/embed/track/5uFWMmhkkQYMwwBwFuhYBx?utm_source=generator&theme=0"
-          title="Kuuntele Kauneinta mitä sus on Spotifyssa"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"></iframe>
-  <p class="mn-muut">Käytätkö jotain muuta palvelua? <a href="https://ffm.to/eooaa7e">Kuuntele omassa palvelussasi</a></p>
-</div>
-<!-- ===== OSA 1: KOPIOI TÄHÄN ASTI ===== -->
-
-<p class="huom">OSA 2 · Jakonappi. Sijoita sanojen ja tekijätietojen perään (tai heti soittimen alle).</p>
-
-<!-- ===== OSA 2: JAKO – KOPIOI TÄSTÄ ===== -->
-<style>
-  .mn-jaa { margin: 40px 0; padding: 28px 24px; border: 1px solid rgba(0,0,0,0.12);
-            border-radius: 12px; text-align: center; }
-  .mn-jaa h3 { margin: 0 0 8px; font-weight: normal; font-size: 1.3em; }
-  .mn-jaa p { margin: 0 0 20px; opacity: 0.8; }
-  .mn-jaa button, .mn-jaa a.mn-nappi {
-    font: inherit; font-size: 0.95em; cursor: pointer; text-decoration: none;
-    display: inline-block; padding: 12px 22px; border-radius: 999px; }
-  .mn-jaa .mn-paa { background: #2a2724; color: #FBFAF8; border: 0; }
-  .mn-jaa .mn-vaihtoehdot { display: none; margin-top: 16px; gap: 8px;
-                            justify-content: center; flex-wrap: wrap; }
-  .mn-jaa .mn-vaihtoehdot.auki { display: flex; }
-  .mn-jaa .mn-vaihtoehdot button, .mn-jaa .mn-vaihtoehdot a.mn-nappi {
-    background: transparent; color: inherit; border: 1px solid rgba(0,0,0,0.25); }
-</style>
-<div class="mn-jaa">
-  <h3>Tuliko joku mieleen?</h3>
-  <p>Tämä on lohtulaulu. Ehkä joku tarvitsee sen tänään.</p>
-  <button type="button" class="mn-paa" id="mn-jaa-nappi">Lähetä laulu hänelle</button>
-  <div class="mn-vaihtoehdot" id="mn-vaihtoehdot">
-    <a class="mn-nappi" id="mn-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="mn-nappi" id="mn-sposti" href="#">Sähköposti</a>
-    <button type="button" id="mn-kopioi">Kopioi linkki</button>
-  </div>
-</div>
-<script>
-(function () {
-  var url = "https://meretniemimusic.fi/kauneinta-mita-sus-on.html";
-  var otsikko = "Kauneinta mitä sus on – Meretniemi";
-  var viesti = "Tää laulu toi sut mieleen 💛";
-  var koko = viesti + "\n\n" + otsikko + "\n" + url;
-
-  var paa = document.getElementById("mn-jaa-nappi");
-  var vaihtoehdot = document.getElementById("mn-vaihtoehdot");
-  document.getElementById("mn-whatsapp").href = "https://wa.me/?text=" + encodeURIComponent(koko);
-  document.getElementById("mn-sposti").href = "mailto:?subject=" + encodeURIComponent(otsikko) +
-                                              "&body=" + encodeURIComponent(koko);
-
-  paa.addEventListener("click", function () {
-    if (navigator.share) {
-      navigator.share({ title: otsikko, text: viesti, url: url }).catch(function () {});
-    } else {
-      vaihtoehdot.classList.toggle("auki");
-    }
-  });
-
-  var kopioi = document.getElementById("mn-kopioi");
-  kopioi.addEventListener("click", function () {
-    var valmis = function () {
-      kopioi.textContent = "Linkki kopioitu ✓";
-      setTimeout(function () { kopioi.textContent = "Kopioi linkki"; }, 2000);
-    };
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(valmis, function () { window.prompt("Kopioi linkki:", url); });
-    } else {
-      window.prompt("Kopioi linkki:", url);
-    }
-  });
-})();
-</script>
-<!-- ===== OSA 2: KOPIOI TÄHÄN ASTI ===== -->
-
-      <p style="margin-top:2.25rem"><a class="btn" href="https://ffm.to/eooaa7e">Kuuntele tästä</a></p>
+      <div class="soitin">
+        <iframe src="https://open.spotify.com/embed/track/5uFWMmhkkQYMwwBwFuhYBx?utm_source=generator&amp;theme=0"
+                title="Kuuntele Kauneinta mitä sus on Spotifyssa"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        <p class="muut-palvelut">Käytätkö jotain muuta palvelua? <a href="https://ffm.to/eooaa7e">Kuuntele omassa palvelussasi</a></p>
+      </div>
     </div>
   </section>
 
@@ -186,7 +111,7 @@
 
       <p>Päivän päätteeksi tajuttiin että se olikin lohtulaulu: kertoja puhuu ihmiselle, joka piilottaa kauneimpia puoliaan toisilta – ja jopa itseltään.</p>
 
-      <p>Se ei heti tuntunut heti mun omalta kappaleelta vaan joltain, joka sopisi Juha Tapiolle tai Samuli Edelmannille. Niin se päätyikin harkintaan Samulin levyprojektiin. </p>
+      <p>Se ei heti tuntunut mun omalta kappaleelta vaan joltain, joka sopisi Juha Tapiolle tai Samuli Edelmannille. Niin se päätyikin harkintaan Samulin levyprojektiin. </p>
 
       <p>Mutta parin kuukauden jälkeen, kuunneltuani biisin eri versioita satoja kertoja, se alkoi tuntua henkilökohtaiselta. Tajusin että mähän laulan siinä rohkaisuksi itselleni. Niin nappasin biisin takaisin mulle. Läheltä piti 😅</p>
     </div>
@@ -266,6 +191,17 @@
     </div>
   </section>
 
+  <section class="jaa rise">
+    <p class="eyebrow">Tuliko joku mieleen?</p>
+    <p class="jaa-teksti">Tämä on lohtulaulu. Ehkä joku tarvitsee sen tänään.</p>
+    <button type="button" class="btn" id="jaa-nappi">Lähetä laulu hänelle</button>
+    <div class="jaa-vaihtoehdot" id="jaa-vaihtoehdot">
+      <a id="jaa-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a id="jaa-sposti" href="#">Sähköposti</a>
+      <button type="button" id="jaa-kopioi">Kopioi linkki</button>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -293,6 +229,39 @@
   <span class="last">jarkko@meretniemimusic.fi</span>
 </footer>
 
+<script>
+// Jakonappi: puhelimessa avautuu oma jakovalikko, tietokoneella vaihtoehdot.
+(function () {
+  var url = "https://meretniemimusic.fi/kauneinta-mita-sus-on.html";
+  var otsikko = "Kauneinta mitä sus on – Meretniemi";
+  var viesti = "Tää laulu toi sut mieleen 💛";
+  var koko = viesti + "\n\n" + otsikko + "\n" + url;
+  var nappi = document.getElementById("jaa-nappi");
+  var vaihtoehdot = document.getElementById("jaa-vaihtoehdot");
+  var kopioi = document.getElementById("jaa-kopioi");
+  if (!nappi) return;
+  document.getElementById("jaa-whatsapp").href = "https://wa.me/?text=" + encodeURIComponent(koko);
+  document.getElementById("jaa-sposti").href = "mailto:?subject=" + encodeURIComponent(otsikko) + "&body=" + encodeURIComponent(koko);
+  nappi.addEventListener("click", function () {
+    if (navigator.share) {
+      navigator.share({ title: otsikko, text: viesti, url: url }).catch(function () {});
+    } else {
+      vaihtoehdot.classList.toggle("auki");
+    }
+  });
+  kopioi.addEventListener("click", function () {
+    var valmis = function () {
+      kopioi.textContent = "Linkki kopioitu ✓";
+      setTimeout(function () { kopioi.textContent = "Kopioi linkki"; }, 2000);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(valmis, function () { window.prompt("Kopioi linkki:", url); });
+    } else {
+      window.prompt("Kopioi linkki:", url);
+    }
+  });
+})();
+</script>
 <script src="sivu.js"></script>
 </body>
 </html>
