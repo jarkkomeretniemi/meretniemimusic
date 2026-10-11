@@ -28,6 +28,10 @@ kit: true
         <span class="video-toista" aria-hidden="true"></span>
       </button>
     </div>
+    {% if k.sivuhuomautus %}<aside class="sivuhuomautus rise" data-delay="300">
+      <p class="eyebrow">Kulisseista</p>
+      <p>{{ k.sivuhuomautus }}</p>
+    </aside>{% endif %}
   </section>
 
   {% endfor %}{% include tilauskutsu.html %}

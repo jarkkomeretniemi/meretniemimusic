@@ -5,10 +5,12 @@
 #   kenen_kanssa  näkyy pienellä otsikon yläpuolella
 #   otsikko       jakson/videon otsikko
 #   kuvaus        pari virkettä siitä mistä puhutaan
+#   sivuhuomautus  pieni kommentti tekstipalstan vieressä (vapaaehtoinen)
 #   youtube       YouTube-videon tunnus (osoitteen v=-kohdan jälkeinen osa)
 #   kesto         esim. "56 min" (vapaaehtoinen)
 
 - kenen_kanssa: "Keskustelu Satu Kotosen kanssa"
   otsikko: "Mä oon vääränlainen – miten häpeä esti vuosikymmeniä ryhtymästä artistiksi"
-  kuvaus: "Me istuttiin alas Suomipopin juontajanakin tunnetun Satu Kotosen kanssa. Vuosia sitten sain biisisessiossa Satulta kokonaisen kuivakakun kotiin vietäväksi. Sen mukana tulleen vuoan palauttaminen unohtui seuraavalla viikolla. Ja sitä seuraavalla. Lopulta Satu sai vuoan takaisin vasta tämän podcastin nauhoituksissa, yli neljän vuoden jälkeen 😬 Puhuttiin lapsuudessa alkunsa saaneesta häpeästä, läheisriippuvuudesta, avioerosta ja siitä, miksi rohkenin ryhtyä artistiksi vasta 49-vuotiaana."
+  kuvaus: "Istuttiin alas Suomipopin juontajanakin tunnetun Satu Kotosen kanssa ja puhuttiin lapsuudessa alkunsa saaneesta häpeästä, läheisriippuvuudesta, avioerosta ja siitä, miksi rohkenin ryhtyä artistiksi vasta 49-vuotiaana."
+  sivuhuomautus: "Satu on ihana ihminen. Vuosia sitten sain biisisessiossa häneltä kokonaisen kuivakakun kotiin vietäväksi. Sen mukana tulleen vuoan palauttaminen unohtui seuraavalla viikolla. Ja sitä seuraavalla. Lopulta onnistuin viemään vuoan takaisin Satulle vasta tän podcastin nauhoituksiin, yli neljän vuoden jälkeen 😬"
   youtube: wTDXiUoXUD0
