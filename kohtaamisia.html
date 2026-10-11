@@ -19,7 +19,7 @@ kit: true
 <main>
 
   {% for k in site.data.kohtaamiset %}<section class="spread mid">
-    <div class="text rise">
+    <div class="text rise kohtaaminen">
       <p class="eyebrow">{{ k.kenen_kanssa }}{% if k.kesto %} · {{ k.kesto }}{% endif %}</p>
       <h2 class="title" style="text-wrap:normal">{{ k.otsikko }}</h2>
       <p>{{ k.kuvaus }}</p>
@@ -27,11 +27,11 @@ kit: true
         <img src="https://i.ytimg.com/vi/{{ k.youtube }}/hqdefault.jpg" alt="" loading="lazy">
         <span class="video-toista" aria-hidden="true"></span>
       </button>
-    </div>
-    {% if k.sivuhuomautus %}<aside class="sivuhuomautus rise" data-delay="300">
+      {% if k.sivuhuomautus %}<aside class="sivuhuomautus">
       <p class="eyebrow">Kulisseista</p>
       <p>{{ k.sivuhuomautus }}</p>
-    </aside>{% endif %}
+      </aside>{% endif %}
+    </div>
   </section>
 
   {% endfor %}{% include tilauskutsu.html %}

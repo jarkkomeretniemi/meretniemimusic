@@ -423,7 +423,7 @@ audio::-webkit-media-controls-panel{background:var(--paper)}
   font:inherit;letter-spacing:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- Kohtaamisia: video, joka latautuu vasta painettaessa ---------- */
-.video{position:relative;display:block;width:100%;aspect-ratio:16/9;margin:2rem 0 0;padding:0;border:0;
+.video{position:relative;display:block;width:100%;aspect-ratio:16/9;margin:2.75rem 0 0;padding:0;border:0;
   border-radius:0;-webkit-appearance:none;appearance:none;font:inherit;background:#0b0908;cursor:pointer;overflow:hidden}
 .video img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;filter:grayscale(.3) brightness(.85);transition:filter .3s}
 .video:hover img{filter:none}
@@ -433,11 +433,12 @@ audio::-webkit-media-controls-panel{background:var(--paper)}
 .video-toista::after{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);
   border-style:solid;border-width:.6rem 0 .6rem 1rem;border-color:transparent transparent transparent #fff}
 
-/* Sivuhuomautus: pieni kommentti palstan vieressä, kuin marginaaliin kirjoitettu */
-.spread > .sivuhuomautus{grid-column:10 / span 3;align-self:end;max-width:15rem;
-  padding-left:1.1rem;border-left:1px solid var(--accent);
+/* Sivuhuomautus: pieni kommentti tekstipalstan vieressä, kuin marginaaliin kirjoitettu.
+   Leveällä näytöllä se kulkee aina samalla etäisyydellä palstasta, kapealla videon alla. */
+.kohtaaminen{position:relative}
+.sivuhuomautus{margin-top:2.5rem;padding-left:1.1rem;border-left:1px solid var(--accent);
   font-style:italic;font-size:.9em;line-height:1.55;color:var(--ink-soft)}
 .sivuhuomautus .eyebrow{font-style:normal;margin-bottom:.9rem}
-@media (max-width:900px){
-  .spread > .sivuhuomautus{max-width:none;margin-top:2.5rem}
+@media (min-width:1180px){
+  .sivuhuomautus{position:absolute;left:calc(100% + 3rem);bottom:0;width:15rem;margin-top:0}
 }
