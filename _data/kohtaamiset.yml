@@ -1,0 +1,14 @@
+# Haastattelut, podcastit ja videot. UUSIN YLIMMÄKSI.
+# Näkyvät Kohtaamisia-sivulla. Ei päivämääriä tarkoituksella:
+# kokoelma ei vanhene.
+#
+#   kenen_kanssa  näkyy pienellä otsikon yläpuolella
+#   otsikko       jakson/videon otsikko
+#   kuvaus        pari virkettä siitä mistä puhutaan
+#   youtube       YouTube-videon tunnus (osoitteen v=-kohdan jälkeinen osa)
+#   kesto         esim. "56 min" (vapaaehtoinen)
+
+- kenen_kanssa: "Keskustelu Satu Kotosen kanssa"
+  otsikko: "Mä oon vääränlainen – miten häpeä esti vuosikymmeniä ryhtymästä artistiksi"
+  kuvaus: "Satu ja minä tunnetaan biisisessioista. Tällä kertaa puhuttiin muustakin kuin musasta: lapsuudessa alkunsa saaneesta häpeästä, läheisriippuvuudesta, avioerosta ja siitä, miksi astuin esiin vasta keski-ikäisenä. Ja pornolauluista."
+  youtube: wTDXiUoXUD0
