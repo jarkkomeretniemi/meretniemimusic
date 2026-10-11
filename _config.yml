@@ -1,0 +1,8 @@
+# Jekyll kokoaa sivut GitHub Pagesissa automaattisesti.
+# Toistuvat osat: _includes/   Sivupohja: _layouts/sivu.html   Julkaisut ja tekstit: _data/
+title: Meretniemi
+url: https://meretniemimusic.fi
+exclude:
+  - LUEMINUT.md
+  - ENNEN-JULKAISUA.md
+  - README.md

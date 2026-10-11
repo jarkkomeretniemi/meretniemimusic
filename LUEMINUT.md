@@ -1,7 +1,39 @@
 # Meretniemi — sivusto
 
-Staattinen sivusto. Ei riippuvuuksia, ei rakennusvaihetta, ei kuukausimaksuja.
-Kaksi tiedostoa hoitaa ulkoasun: `tyyli.css` ja `sivu.js`.
+Staattinen sivusto GitHub Pagesissa. Ei kuukausimaksuja. GitHub kokoaa sivut
+Jekyllillä automaattisesti joka kerta, kun muutokset viedään (Push). Mitään ei
+tarvitse asentaa omalle koneelle.
+
+## Mistä mitäkin muutetaan
+
+| Mitä | Missä |
+|---|---|
+| Uusi julkaisu | `_data/julkaisut.yml` — lisää uusin ylimmäksi. Etusivu ja Laulut-sivu päivittyvät itse. |
+| Uusi Pyhäkoulu-teksti listoihin | `_data/tekstit.yml` — uusin ylimmäksi. Pyhäkoulu-sivu ja etusivun kaksi esimerkkiä päivittyvät itse. |
+| Valikko (Laulut, Tarina, Pyhäkoulu) | `_includes/valikko.html` |
+| Alatunniste, somelinkit, sähköposti | `_includes/alatunniste.html` |
+| Uutiskirjeen tilauslomake | `_includes/tilauslomake.html` |
+| `<head>`: fontit, favicon, metatagien rakenne | `_layouts/sivu.html` |
+| Sivun otsikko ja kuvaus (Google, some-esikatselu) | sivun alussa `---`-viivojen välissä: `title` ja `description` |
+| Ulkoasu | `tyyli.css` |
+
+Jokaisen sivun alussa on `---`-viivojen väliin kirjoitettu tietolohko:
+
+- `title`, `description` — näkyvät Googlessa ja jakoesikatseluissa. Kirjoitetaan
+  kerran; sivupohja täyttää niillä myös og- ja twitter-tagit.
+- `kuva` — jakokuva, jos eri kuin `kuvat/kansi.jpg`
+- `og_tyyppi` — jos eri kuin `website` (esim. `article`, `music.song`)
+- `valikko` — mikä valikon kohta näkyy aktiivisena
+- `kit: true` — sivulla on uutiskirjelomake
+- `noindex: true` — piiloon hakukoneilta
+- `jsonld` — Googlen rakenteinen tieto
+
+Tekstiä `{% include tilauslomake.html %}` ei saa poistaa vahingossa — se on
+paikka, johon lomake tulee. `kuuntelu/`-kansion sivu on tavallista HTML:ää
+ilman tietolohkoa, ja Jekyll kopioi sen sellaisenaan.
+
+Alla olevat vanhemmat ohjeet on kirjoitettu ennen Jekylliä. Kun ne puhuvat
+"kaikista sivuista", muutos tehdään nyt yhteen `_includes`-tiedostoon.
 
 ## Sivut
 
@@ -85,12 +117,13 @@ kertosäe jää sinne yksin, mikä on sen oikea paikka.
 
 ## Seuraava single
 
-Kolme vaihetta:
+Kaksi vaihetta:
 
-1. **Etusivun kenttä** vaihtuu kokonaan uuteen julkaisuun. Kenttä näyttää
-   aina vain uusimman.
-2. **Uusi biisisivu** kopioimalla `kauneinta-mita-sus-on.html`.
-3. **Rivi lisää** `laulut.html`-sivulle, uusin ylimmäksi.
+1. **Uusi biisisivu** kopioimalla `kauneinta-mita-sus-on.html`. Vaihda
+   tietolohkon `title`, `description` ja `jsonld` sekä sivun sisältö
+   (kertosäe, tarina, sanat, Spotify-tunnus soittimessa ja jakonapin osoite).
+2. **Uusi kohta** `_data/julkaisut.yml`-tiedoston alkuun. Etusivu ja
+   Laulut-sivu päivittyvät siitä.
 
 Vanhat biisisivut jäävät paikoilleen — niihin linkitetään Spotifysta ja
 tiedotteista vielä vuosien päästä. Ainoa muutos vanhaan sivuun on se, että
@@ -119,9 +152,9 @@ Se on sivuston ainoa kylläinen pinta, ja siksi julkaisu on aina sivuston
 ## Uusi teksti Pyhäkouluun
 
 1. Kopioi `teksti-viinerit.html` uudeksi tiedostoksi, esim. `teksti-aiti.html`.
-2. Vaihda otsikko, `<title>`, `description` ja leipäteksti.
-3. Lisää rivi `pyhakoulu.html`-sivun listaan.
-4. Nosta uusin teksti myös etusivulle.
+2. Vaihda tietolohkon `title`, `description` ja `jsonld` sekä leipäteksti.
+3. Lisää uusi kohta `_data/tekstit.yml`-tiedoston alkuun. Se ilmestyy
+   Pyhäkoulu-sivulle ja etusivun esimerkkeihin.
 
 Tekstissä ei ole päivämäärää. Se on tarkoituksellista: päivätty blogi
 näyttää hylätyltä jos edellinen merkintä on maaliskuulta, päiväämätön

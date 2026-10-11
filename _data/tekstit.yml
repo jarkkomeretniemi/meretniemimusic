@@ -1,0 +1,18 @@
+# Pyhäkoulu-tekstit. UUSIN YLIMMÄKSI.
+# Pyhäkoulu-sivu näyttää kaikki, etusivu kaksi ylintä.
+
+- sivu: teksti-viinerit.html
+  otsikko: "Pakkomielle viinereihin kätkikin alleen psyykkisen haavan"
+  ingressi: "Olen läpi elämäni ollut hulluna viinereihin."
+
+- sivu: teksti-viha.html
+  otsikko: "Vei neljä vuotta avioerosta ennen kuin pystyin tuntemaan vihaa"
+  ingressi: "Minulla on historiaa negatiivisten tunteiden patoamisesta."
+
+- sivu: teksti-oppikirja.html
+  otsikko: "Kuolleen isäni outo uskomus – ja miten vapauduin siitä"
+  ingressi: "Isäni uskoi, että on olemassa kosminen oppikirja."
+
+- sivu: teksti-sielunkumppani.html
+  otsikko: "Sielunkumppani ei olekaan se, jonka kanssa on helpointa"
+  ingressi: "Luulin pitkään että hyvä parisuhde on sellainen jossa asiat vain loksahtavat paikalleen."

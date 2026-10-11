@@ -1,0 +1,22 @@
+# Meretniemen julkaisut. UUSIN YLIMMÄKSI.
+# Etusivu näyttää aina ylimmän, Laulut-sivu kaikki.
+#
+#   nimi        laulun nimi
+#   sivu        laulun oma sivu (kopioi kauneinta-mita-sus-on.html pohjaksi)
+#   kansi       kansikuva kuvat-kansiossa
+#   etiketti    pieni teksti etusivulla otsikon yläpuolella
+#   tyyppi      Single / EP / Albumi
+#   pvm         julkaisupäivä
+#   linkki      Feature.fm-linkki
+#   etusivulle  kuvaus etusivulle
+#   kuvaus      kuvaus Laulut-sivulle
+
+- nimi: "Kauneinta mitä sus on"
+  sivu: kauneinta-mita-sus-on.html
+  kansi: kuvat/kansi.jpg
+  etiketti: Esikoissingle
+  tyyppi: Single
+  pvm: 21.8.2026
+  linkki: https://ffm.to/eooaa7e
+  etusivulle: "Tämä biisi kertoo siitä, miten moni meistä piilottaa omaa hehkuaan toisilta, jopa itseltään."
+  kuvaus: "Laulu ihmiselle, joka piilottaa kauneimmat puolensa toisilta – ja jopa itseltään."
