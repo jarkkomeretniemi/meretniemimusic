@@ -117,7 +117,7 @@ noindex: true
       </figure>
     </div>
     <div class="text rise" data-delay="120">
-      <p class="eyebrow">{% if forloop.first %}Julkaisut · uusin ensin{% else %}Julkaisu{% endif %}</p>
+      <p class="eyebrow">{% if forloop.first %}Julkaisut{% else %}Julkaisu{% endif %}</p>
       <h2 class="title">{{ j.nimi }}</h2>
       <p class="credits">
         {{ j.tyyppi }}, {{ j.pvm }}{% if j.kesto %} · kesto {{ j.kesto }}{% endif %}<br>
@@ -169,7 +169,7 @@ noindex: true
     <div class="text rise">
       <p class="eyebrow">For international media</p>
       <p lang="en">Jarkko Meretniemi is a Finnish songwriter and artist from Helsinki. His songs have been performed by leading Finnish artists, including Laura Närhi, whose triple-platinum “Supersankari” has been streamed nearly 15 million times.</p>
-      <p lang="en">He launched his own artist project, Meretniemi, in August 2026. Releases so far, latest first:</p>
+      <p lang="en">He launched his own artist project, Meretniemi, in August 2026. Releases so far:</p>
 {%- for j in site.data.julkaisut %}
       <p lang="en"><em>{{ j.nimi }}</em> (“{{ j.nimi_en }}”, {{ j.pvm }}). {{ j.kuvaus_en }}</p>
 {%- endfor %}

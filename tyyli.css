@@ -461,3 +461,14 @@ audio::-webkit-media-controls-panel{background:var(--paper)}
 @media (min-width:1180px){
   .sivuhuomautus{position:absolute;left:calc(100% + 3rem);bottom:0;width:15rem;margin-top:0}
 }
+
+/* Medialle: aiemmat tiedotteet omassa laatikossaan uusimman vieressä */
+.arkisto{border:1px solid #DED7CB;padding:1.75rem 1.75rem .5rem;background:rgba(255,255,255,.35)}
+.arkisto .eyebrow{margin-bottom:1.25rem}
+.arkisto-rivi{padding:1.1rem 0;border-top:1px solid #DED7CB}
+.arkisto-rivi:first-of-type{border-top:0;padding-top:0}
+.arkisto-otsikko{font-size:1.15rem;line-height:1.35;margin:0 0 .35rem}
+.arkisto .fineprint{margin:0 0 .6rem}
+.arkisto-linkit{margin:0}
+#tiedote > .aside{align-self:start;margin-top:2.6rem}
+@media (max-width:900px){#tiedote > .aside{margin-top:3rem}}

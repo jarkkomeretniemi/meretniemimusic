@@ -16,7 +16,7 @@ valikko: "laulut"
 
 <main>
 
-  {% for j in site.data.julkaisut %}<section class="spread airy">
+  {% for j in site.data.julkaisut %}<section class="spread airy{% cycle ' tint', '' %}">
     <div class="aside rise">
       <figure><a href="{{ j.sivu }}"><img src="{{ j.kansi }}" alt="{{ j.nimi }} — kansi"></a></figure>
     </div>
