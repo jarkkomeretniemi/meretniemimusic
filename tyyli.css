@@ -258,6 +258,9 @@ figcaption{font-family:var(--sans);font-size:.6875rem;line-height:1.6;letter-spa
 @media (max-width:900px){ .banner{height:56svh} }
 
 .banner .when{margin:1.4rem 0 0;color:rgba(255,255,255,.85)}
+/* Pienempi jatkorivi ison otsikon alla (esim. kiitos.html) */
+.banner .lead{font-size:clamp(1.2rem,1rem + .9vw,1.7rem);line-height:1.35;margin:1.1rem 0 0;max-width:34em;
+  text-wrap:balance;color:rgba(255,255,255,.9);text-shadow:0 2px 30px rgba(0,0,0,.5)}
 .banner .btn{margin-top:1.6rem}
 .banner .btn:hover{background:#fff;color:var(--ink)}
 .banner .caption p:last-child{margin-bottom:0}

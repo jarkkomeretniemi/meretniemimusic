@@ -48,6 +48,7 @@ Alla olevat vanhemmat ohjeet on kirjoitettu ennen Jekylliä. Kun ne puhuvat
 | `tarina.html` | Punainen polkuauto |
 | `medialle.html` | Aineistot toimittajille (ei hakukoneindeksissä) |
 | `tilaa.html` | Kylmä laskeutumissivu uutiskirjeelle — tämä Instagramin bioon |
+| `kiitos.html` | Kiitossivu pre-saven tehneille — Feature.fm:n Post Pre-Save Destination. Yleiskäyttöinen, ei biisin nimeä, piilossa hakukoneilta |
 | `biiseja-muille.html` | Biisintekijän krediitit |
 
 ## Käyttöönotto GitHub Pagesiin
@@ -80,9 +81,6 @@ rekisteröijälle ennen tilauksen päättymistä.
 - **Kuvat ovat jo paikoillaan** `kuvat/`-kansiossa. Jos vaihdat jonkin,
   korvaa tiedosto samalla nimellä, niin HTML:ää ei tarvitse koskea.
 - **Kit-lomake.** Katso alempaa oma lukunsa.
-- **Threadsin osoite** vaihtuu: alatunnisteessa on nyt `@jarkkotuukka`,
-  ja kun tunnus muuttuu muotoon `meretniemimusic`, korvaa se kaikilta
-  sivuilta kerralla (etsi ja korvaa `threads.net/@jarkkotuukka`).
 - **Spotify-soitin** singlen sivulla, julkaisun jälkeen. Kommentoitu rivi
   odottaa `<div class="embed">`-lohkon sisällä.
 - **Mistä laulu syntyi** -osio singlen sivulla, hakasulkeissa oleva teksti.

@@ -1,0 +1,55 @@
+---
+layout: "sivu"
+title: "Kiitos! | Meretniemi"
+description: "Biisi tallentuu kirjastoosi julkaisupäivänä."
+kit: true
+noindex: true
+---
+{%- comment -%}
+  KIITOSSIVU PRE-SAVEN TEHNEILLE
+  Feature.fm ohjaa tänne jokaisen, joka on tallentanut singlen ennakkoon
+  (Feature.fm: Post Pre-Save Destination = https://meretniemimusic.fi/kiitos.html).
+
+  Sivu on tarkoituksella yleiskäyttöinen: biisin nimeä ei mainita, joten
+  samaa sivua voi käyttää jokaisen singlen kanssa koskematta siihen.
+
+  Sivu ei näy valikossa eikä sitemapissa, ja se on piilotettu hakukoneilta.
+
+  Oma Kit-lomake: jos haluat nähdä Kitissä, ketkä tilaajat tulivat
+  pre-saven kautta, tee Kitiin oma lomake (ja sille tagi "presave") ja
+  vaihda sen numero ja UID alla olevaan include-riviin lomake- ja uid-kohtiin.
+  Nyt käytössä on sama päälomake kuin muilla sivuilla.
+{%- endcomment %}
+
+<section class="banner">
+  {% include valikko.html %}
+  <img src="kuvat/artisti-tulossa.jpg" style="object-position:50% 22%" alt="Jarkko Meretniemi kävelee metsäpolkua pitkin kitara kädessään">
+  <div class="shade"></div>
+  <div class="caption">
+    <h1>Kiitos!</h1>
+    <p class="lead">Biisi on tallennettu. <span>Löydät sen kirjastostasi julkaisupäivänä.</span></p>
+  </div>
+</section>
+
+<main>
+
+  <section class="spread mid first">
+    <div class="text rise">
+      <h2 class="title">Haluatko tietää, mistä mun biisit kertovat?</h2>
+      <p>Tilaa Pyhäkoulu-uutiskirje. Kirjoitan joka sunnuntai tarinoita laulujen takaa: rakkaudesta, menetyksistä ja elämän kipeästä kauneudesta. Plus kuulet uudet laulut ensimmäisenä.</p>
+      <div class="signup">
+        {% include tilauslomake.html lomake="9773072" uid="2bdf57b642" %}
+        <p class="fineprint">Voit peruuttaa milloin tahansa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="spread mid tint">
+    <div class="text rise">
+      <p>Mä oon Meretniemi. Teen suomenkielistä kaihopoppia.</p>
+      <p>Lapsena istuin kaikki sunnuntaiaamut pyhäkoulussa. Niistä tarinoista jäi fiilis, että meitä kannatellaan silloinkin kun ei siltä tunnu. Vaikka suhteeni uskontoon on muuttunut, se fiilis ei ole haihtunut minnekään.</p>
+      <p>Kirjoitan sunnuntaisin siitä, mistä laulut syntyvät: häpeästä, nähdyksi tulemisen janosta ja menetyksistä, jotka antavat elämälle arvon. Joskus myös ystäviltä varastamistani kakkuvuoista ja kohtaamistani biisoneista 😄</p>
+    </div>
+  </section>
+
+</main>

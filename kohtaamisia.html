@@ -24,7 +24,7 @@ kit: true
       <h2 class="title" style="text-wrap:normal">{{ k.otsikko }}</h2>
       <p>{{ k.kuvaus }}</p>
       <button type="button" class="video" data-youtube="{{ k.youtube }}" aria-label="Katso video: {{ k.otsikko }}">
-        <img src="https://i.ytimg.com/vi/{{ k.youtube }}/hqdefault.jpg" alt="" loading="lazy">
+        <img src="https://i.ytimg.com/vi/{{ k.youtube }}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
         <span class="video-toista" aria-hidden="true"></span>
       </button>
       {% if k.sivuhuomautus %}<aside class="sivuhuomautus">
