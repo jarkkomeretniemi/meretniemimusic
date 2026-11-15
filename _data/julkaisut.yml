@@ -30,9 +30,11 @@
   kansi: kuvat/kansi-ei-kukaan.jpg
   kansi_hires: kuvat/hires/meretniemi-kansi-ei-kukaan-2576.jpg
   kansi_koko: "2576 × 2576"
+  kansi_teksti: "Kuvassa isäni ja äitini heidän hääpäivänään. Isä tykkäsi tehdä äidille kortteja, joihin leikkasi valokuvista oman päänsä puhekuplan viereen."
   etiketti: Uusi single
   tyyppi: Single
   pvm: 20.11.2026
+  kesto: "2.56"
   linkki: https://ffm.to/eikukaan
   spotify: ""
   julkaisuhetki: "2026-11-20T00:00:00+02:00"
@@ -43,6 +45,8 @@
   tuotanto: "Jukka Jahnukainen"
   masterointi: "Henkka Niemistö"
   julkaisija: "Has Been Records"
+  mp3: aani/Meretniemi-Ei-kukaan-niin-kuin-ma.mp3
+  flac: aani/Meretniemi-Ei-kukaan-niin-kuin-ma-44k16b.flac
   tiedote: tiedote-ei-kukaan-niin-kuin-ma.html
   tiedote_pdf: tiedote/meretniemi-tiedote-ei-kukaan-niin-kuin-ma.pdf
   tiedote_otsikko: "Tuottajaa harmitti, kun hyvä biisi meni ”nobodylle” – siitä syntyi artisti Meretniemi"
