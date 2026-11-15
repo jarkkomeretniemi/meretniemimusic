@@ -1,0 +1,252 @@
+---
+layout: "sivu"
+title: "Ei kukaan niin kuin mä — Meretniemi"
+description: "Kuuntele Meretniemen single Ei kukaan niin kuin mä ja lue sanat sekä tarina laulun takaa."
+og_tyyppi: "music.song"
+kuva: "kuvat/kansi-ei-kukaan.jpg"
+jsonld: |
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicRecording",
+    "name": "Ei kukaan niin kuin mä",
+    "byArtist": {"@id": "https://meretniemimusic.fi/#artisti"},
+    "datePublished": "2026-11-20",
+    "inLanguage": "fi",
+    "genre": "Kaihopop",
+    "url": "https://meretniemimusic.fi/ei-kukaan-niin-kuin-ma.html",
+    "image": "https://meretniemimusic.fi/kuvat/kansi-ei-kukaan.jpg",
+    "recordingOf": {
+      "@type": "MusicComposition",
+      "name": "Ei kukaan niin kuin mä",
+      "composer": [
+        {"@type": "Person", "name": "Jukka Jahnukainen"},
+        {"@type": "Person", "name": "Jarkko Meretniemi"}
+      ],
+      "lyricist": [
+        {"@type": "Person", "name": "Jukka Jahnukainen"},
+        {"@type": "Person", "name": "Jarkko Meretniemi"}
+      ]
+    },
+    "producer": {"@type": "Person", "name": "Jukka Jahnukainen"},
+    "recordLabel": {"@type": "Organization", "name": "Has Been Records"}
+  }
+kit: true
+---
+{%- comment -%}
+  Linkit, Spotify-tunnus ja julkaisuhetki tulevat tiedostosta _data/julkaisut.yml.
+  Ennen julkaisuhetkeä sivulla näkyy pre-save-nappi, sen jälkeen Spotify-soitin.
+  Vaihto tapahtuu itsestään, sivua ei tarvitse muokata julkaisupäivänä.
+{%- endcomment -%}
+{%- assign j = site.data.julkaisut | where: "sivu", page.path | first -%}
+
+<section class="banner">
+  {% include valikko.html %}
+  <img src="kuvat/artisti-polku.jpg" style="object-position:62% 28%" alt="Jarkko Meretniemi kävelee metsäpolkua poispäin kitara kädessään">
+  <div class="shade"></div>
+  <div class="caption">
+    <p class="eyebrow">Single</p>
+    <h1>Ei kukaan niin kuin mä</h1>
+  </div>
+</section>
+
+<main>
+
+  <section class="chorus">
+    <p class="rise">Kuuntele mua vielä</p>
+    <p class="rise" data-delay="260">Ennen kun sä solmit kengät</p>
+    <p class="rise hi" data-delay="560">Kukaan ei koskaan tuu sua rakastamaan näin</p>
+  </section>
+
+  <section class="spread airy tint">
+    <div class="aside rise">
+      <figure>
+        <img src="{{ j.kansi }}" alt="Singlen kansi">
+      </figure>
+    </div>
+    <div class="text rise" data-delay="120">
+      <p class="eyebrow">Single · {{ j.pvm }}</p>
+      <h2 class="title">{{ j.nimi }}</h2>
+      <p>Mitä sä olisit halunnut sanoa, ennen kuin toinen solmi kengät?</p>
+      <div class="soitin" data-julkaisu="{{ j.julkaisuhetki }}">
+        <div class="ennen">
+          <p class="muut-palvelut" style="margin-top:0">Laulu ilmestyy kaikkiin suoratoistopalveluihin {{ j.pvm }}. Tallenna se ennakkoon, niin se odottaa sua kirjastossasi julkaisupäivänä.</p>
+          <p style="margin-top:1.5rem"><a class="btn" href="{{ j.linkki }}">Tallenna ennakkoon</a></p>
+        </div>
+        <div class="jalkeen" hidden>
+          {% if j.spotify and j.spotify != "" %}<iframe data-src="https://open.spotify.com/embed/{{ j.spotify }}?utm_source=generator&amp;theme=0"
+                  title="Kuuntele {{ j.nimi }} Spotifyssa"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"></iframe>
+          <p class="muut-palvelut">Etkö käytä Spotifyta? <a href="{{ j.linkki }}">Kuuntele omassa palvelussasi</a></p>
+          {% else %}<p style="margin-top:1.5rem"><a class="btn" href="{{ j.linkki }}">Kuuntele</a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spread mid">
+    <div class="text rise">
+      <p class="eyebrow">Mistä laulu syntyi</p>
+      <p>Tästä biisistä kaikki alkoi.</p>
+
+      <p>Olin jo vuosia yrittänyt ymmärtää, millaista musiikkia Meretniemi olisi. Poppia? Kahvilajatsia? R’n’B:tä? Iskelmää? Akustista luomusoundia? Supertuotettua elektronista? Oli kymmenittäin ideoita mutta ei punaista lankaa.</p>
+
+      <p>Kaiken lisäksi en oikein vieläkään kestänyt kuunnella omaa lauluääntäni, edes studio-olosuhteissa.</p>
+
+      <p>Sitten koitti kevät 2022. Olimme sopineet tuottaja Jukka Jahnukaisen kanssa ekan yhteisen session. Tiesin Jukan, koska olimme housewritereita samassa kustantamossa, ja ihailin hänen kirjoittajantaitojaan.</p>
+
+      <p>Tuossa sessiossa oli tarkoitus kirjoittaa biisi kotimaiselle miesartistille (olisko ollut Ressulle). Biisin valmistuttua vedin demolaulut Jukan tuottaman träkin päälle. Kun kuuntelimme kokonaisuutta, mulle tuli outo olo. Sähköistynyt olo. Tajusin että tässä se oli. Tämä musa oli Meretniemeä.</p>
+
+      <p>Sanoin Jukalle että haluan biisin itselleni. Jukka sanoi tottakai.</p>
+
+      <p>(Myöhemmin Jukka kertoi että vähän v*tutti, koska hän piti biisiä hyvänä eikä voinut tarjota sitä isommille artisteille. Sori Jukka!)</p>
+
+      <p>Siinä hetkessä tapahtui monta asiaa samanaikaisesti. Rakastuin biisin melankoliaan. Rakastuin Jukan sorvaamaan laulusoundiin, jossa oli läsnäoloa ja intiimiyttä. Rakastuin tuotannon elokuvalliseen tunnelmaan. Olin huojentunut. Vuosien etsintä oli päättynyt. Meretniemi oli syntynyt.</p>
+    </div>
+  </section>
+
+  <section class="plate">
+    <img src="kuvat/artisti-tulossa.jpg" alt="Jarkko Meretniemi kävelee metsäpolkua kohti kameraa">
+  </section>
+
+  <section class="spread mid">
+    <div class="text rise">
+      <p class="eyebrow">Mistä laulu kertoo</p>
+      <p><em>Ei kukaan niin kuin mä</em> kertoo eron hetkestä, kun toinen on juuri lähtemässä. Aihe löytyi meidän molempien omasta elämästä. Jukka oli kumppaninsa kanssa juuri päätynyt asumuseroon. Vaikka mun omasta avioerostani oli vuosia aikaa, en ollut purkanut jätetyksi tulemisen kokemusta kovin moneen kappaleeseen. En nytkään tietoisesti tehnyt niin. Vasta kun biisi oli valmis, huomasin että siihen oli tallentunut paljon sitä, minkä kanssa painin oman eroni aikaan.</p>
+
+      <p>Biisin kertoja on jätetty osapuoli. Häntä sattuu, koska toinen ei ymmärrä, mitä kertoja on tämän puolesta tehnyt. Hänen rakkauttaan ja panostaan suhteen hyväksi ei selvästikään ole arvostettu. Silti hän haluaisi jatkaa suhdetta.</p>
+
+      <p>Näkökulmassa on tiettyä harhaisuutta, mitä kertoja ei itse huomaa: jos kerran oma rakkaus on ollut niin erityistä, ettei kumppani voisi koskaan löytää mitään vastaavaa, miksi kumppanilla on tarve lähteä? Mutta biisissä ei vielä olla oivalluksissa. Ensin pitää tuntea hylätyksi tulemisen tuska koko sen voimassa.</p>
+    </div>
+  </section>
+
+  <section class="plate">
+    <img src="kuvat/artisti-kivi.jpg" alt="Jarkko Meretniemi istuu sammalkivellä ja katsoo taakseen">
+  </section>
+
+  <section class="spread mid">
+    <div class="text rise">
+      <p class="eyebrow">Sanat</p>
+      <div class="verse">
+        <p>Sä kysyt mis mun Kissin paita</p>
+        <p>En mä haluis vastata</p>
+        <p>Et edes pysty kattoo silmiin</p>
+        <p class="gap">Kun vedät repun vetskarin kii</p>
+
+        <p>Täst kaikest vois viel sopii</p>
+        <p>Ton jalkalistan korjata</p>
+        <p class="gap">Mut siin sä purat meidän kotii</p>
+
+        <div class="ker">
+        <p>Kuuntele mua vielä</p>
+        <p>Ennen kun sä solmit kengät</p>
+        <p class="gap">Kukaan ei koskaan tuu sua rakastamaan näin</p>
+
+        <p>Niin kauan kun oot siinä</p>
+        <p>Sun ei oo pakko mennä</p>
+        <p class="gap">Kukaan ei koskaan tuu sua rakastamaan näin</p>
+
+        <p>Uuuuuuuuuuu</p>
+        <p class="gap">Mua sattuu</p>
+
+        <p>Jos sä silti lähdet</p>
+        <p>Mä haluun et sä muistat</p>
+        <p class="gap">Ei kukaan niin kuin mä</p>
+        </div>
+
+        <p>Mitä jos tää ois uus alku</p>
+        <p>Myrsky joka puhdistaa</p>
+        <p>Ja vaik vähän sukat kastu</p>
+        <p class="gap">Me voitas yhes viel jatkaa</p>
+
+        <div class="ker">
+        <p>Kuuntele mua vielä</p>
+        <p>Ennen kun sä solmit kengät</p>
+        <p class="gap">Kukaan ei koskaan tuu sua rakastamaan näin</p>
+
+        <p>Niin kauan kun oot siinä</p>
+        <p>Sun ei oo pakko mennä</p>
+        <p class="gap">Kukaan ei koskaan tuu sua rakastamaan näin</p>
+
+        <p>Uuuuuuuuuuu</p>
+        <p class="gap">Mua sattuu</p>
+
+        <p>Jos sä silti lähdet</p>
+        <p>Mä haluun et sä muistat</p>
+        <p>Ei kukaan niin kuin mä</p>
+        </div>
+      </div>
+
+      <div class="colophon">
+      <p class="credits">
+        Sävellys ja sanat <strong>{{ j.savellys_sanat }}</strong><br>
+        Tuotanto ja miksaus <strong>{{ j.tuotanto }}</strong><br>
+        Masterointi <strong>{{ j.masterointi }}</strong><br>
+        Julkaisija <strong>{{ j.julkaisija }}</strong>
+      </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="jaa rise">
+    <p class="eyebrow">Tuliko joku mieleen?</p>
+    <p class="jaa-teksti">Ehkä joku sun ystävä elää juuri nyt tätä hetkeä.</p>
+    <button type="button" class="btn" id="jaa-nappi">Lähetä laulu hänelle</button>
+    <div class="jaa-vaihtoehdot" id="jaa-vaihtoehdot">
+      <a id="jaa-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a id="jaa-sposti" href="#">Sähköposti</a>
+      <button type="button" id="jaa-kopioi">Kopioi linkki</button>
+    </div>
+  </section>
+
+  {% include tilauskutsu.html %}
+
+</main>
+
+<script>
+// Ennen julkaisuhetkeä pre-save-nappi, sen jälkeen Spotify-soitin.
+(function () {
+  var s = document.querySelector(".soitin[data-julkaisu]");
+  if (!s) return;
+  var hetki = Date.parse(s.getAttribute("data-julkaisu"));
+  if (isNaN(hetki) || Date.now() < hetki) return;
+  s.querySelector(".ennen").hidden = true;
+  var jalkeen = s.querySelector(".jalkeen");
+  jalkeen.hidden = false;
+  var f = jalkeen.querySelector("iframe[data-src]");
+  if (f) f.src = f.getAttribute("data-src");
+})();
+
+// Jakonappi: puhelimessa avautuu oma jakovalikko, tietokoneella vaihtoehdot.
+(function () {
+  var url = "https://meretniemimusic.fi/ei-kukaan-niin-kuin-ma.html";
+  var otsikko = "Ei kukaan niin kuin mä – Meretniemi";
+  var viesti = "Ajattelin sua, kun kuulin tän laulun 💛";
+  var koko = viesti + "\n\n" + otsikko + "\n" + url;
+  var nappi = document.getElementById("jaa-nappi");
+  var vaihtoehdot = document.getElementById("jaa-vaihtoehdot");
+  var kopioi = document.getElementById("jaa-kopioi");
+  if (!nappi) return;
+  document.getElementById("jaa-whatsapp").href = "https://wa.me/?text=" + encodeURIComponent(koko);
+  document.getElementById("jaa-sposti").href = "mailto:?subject=" + encodeURIComponent(otsikko) + "&body=" + encodeURIComponent(koko);
+  nappi.addEventListener("click", function () {
+    if (navigator.share) {
+      navigator.share({ title: otsikko, text: viesti, url: url }).catch(function () {});
+    } else {
+      vaihtoehdot.classList.toggle("auki");
+    }
+  });
+  kopioi.addEventListener("click", function () {
+    var valmis = function () {
+      kopioi.textContent = "Linkki kopioitu ✓";
+      setTimeout(function () { kopioi.textContent = "Kopioi linkki"; }, 2000);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(valmis, function () { window.prompt("Kopioi linkki:", url); });
+    } else {
+      window.prompt("Kopioi linkki:", url);
+    }
+  });
+})();
+</script>

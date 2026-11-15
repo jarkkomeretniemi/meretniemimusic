@@ -31,3 +31,13 @@
     nappi.setAttribute("aria-expanded", auki ? "true" : "false");
   });
 })();
+
+// Herovideo: jos käyttäjä on rajoittanut animaatioita, näytetään pysäytyskuva.
+(function () {
+  var v = document.querySelector(".stage video.kuva");
+  if (!v) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    v.removeAttribute("autoplay");
+    v.pause();
+  }
+})();

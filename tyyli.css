@@ -38,6 +38,21 @@ a{color:inherit}
   mask-image:radial-gradient(circle at var(--x) var(--y),#000 0%,#000 4.5%,rgba(0,0,0,.5) 9%,transparent 17%);
   animation:breathe 9s ease-in-out infinite alternate}
 @keyframes breathe{from{opacity:.68}to{opacity:1}}
+/* Herokuvan tekstuuri (_data/etusivu.yml: tekstuuri: rae / rasteri) */
+.stage .rae{position:absolute;inset:-120px;z-index:1;pointer-events:none;
+  background:url(kuvat/rae.png) 0 0/320px 320px;opacity:.2;mix-blend-mode:overlay;
+  animation:rae .4s steps(1) infinite}
+/* rae vaihtuu 20 kertaa sekunnissa, kuten filmillä */
+@keyframes rae{0%{transform:translate(0,0)}12.5%{transform:translate(-47px,23px)}25%{transform:translate(31px,-59px)}
+  37.5%{transform:translate(-13px,71px)}50%{transform:translate(67px,11px)}62.5%{transform:translate(-83px,-37px)}
+  75%{transform:translate(19px,89px)}87.5%{transform:translate(-61px,-101px)}}
+.stage .rasteri{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(circle,rgba(0,0,0,.6) 0 .9px,transparent 1.5px) 0 0/4px 4px;
+  mix-blend-mode:multiply;opacity:.55}
+@media (prefers-reduced-motion:reduce){.stage .rae{animation:none}}
+/* Tavallinen herokuva ilman valokeilaa (_data/etusivu.yml: valokeila: false) */
+.stage > .kuva{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:contrast(1.04) brightness(.92)}
 .veil{position:absolute;inset:0;
   background:radial-gradient(ellipse 65% 55% at 50% 40%,transparent 0%,rgba(8,6,5,.3) 55%,rgba(8,6,5,.88) 100%);
   opacity:calc(.6 + var(--dim)*.4)}
@@ -261,6 +276,7 @@ figcaption{font-family:var(--sans);font-size:.6875rem;line-height:1.6;letter-spa
 /* Pienempi jatkorivi ison otsikon alla (esim. kiitos.html) */
 .banner .lead{font-size:clamp(1.2rem,1rem + .9vw,1.7rem);line-height:1.35;margin:1.1rem 0 0;max-width:34em;
   text-wrap:balance;color:rgba(255,255,255,.9);text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.banner .lead span{display:inline-block} /* kapealla näytöllä rivi katkeaa lauseen kohdalta */
 .banner .btn{margin-top:1.6rem}
 .banner .btn:hover{background:#fff;color:var(--ink)}
 .banner .caption p:last-child{margin-bottom:0}

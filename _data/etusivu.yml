@@ -1,0 +1,39 @@
+# Etusivun ylin osio (hero). Vaihda muutaman kerran vuodessa – ei joka singlellä.
+# Uusin single näkyy etusivulla joka tapauksessa automaattisesti heron alla
+# (_data/julkaisut.yml, ylin kohta).
+#
+#   kuva         kuva kuvat-kansiossa. Videon kanssa tämä näkyy, kunnes video
+#                latautuu, ja aina jos käyttäjä on rajoittanut animaatioita.
+#   video        (valinnainen) äänetön, itseään toistava videopätkä, esim.
+#                video/hero.mp4. Jätä pois tai tyhjäksi, niin näkyy pelkkä kuva.
+#   kuva_alt     kuvan kuvaus ruudunlukijoille
+#   kohta        mihin kohtaan kuvaa rajaus keskitetään (vaaka pystysuunta),
+#                esim. "40% 50%". Säädä, jos hahmo jää puhelimella reunaan.
+#   etiketti     pieni teksti lauseen yläpuolella
+#   lause        heron iso lause
+#   tekstuuri    rae = filmirae, rasteri = painorasteri, tyhjä = ei tekstuuria.
+#                Tekstuuri piirretään sivulla kuvan/videon päälle, joten se ei
+#                kasvata videotiedoston kokoa.
+#   valokeila    true = esikoissinglen luokkakuva-valokeila (toimii vain
+#                luokkakuvan kanssa), false = tavallinen kuva
+#
+# Esikoissinglen kampanjan hero talteen, jos haluat sen joskus takaisin:
+#   kuva: kuvat/luokkakuva.jpg
+#   kuva_alt: Luokkakuva vuodelta 1983, yksi lapsi valaistuna
+#   etiketti: Kaihopoppia
+#   lause: Se mitä piilotat muilta on kauneinta mitä sus on.
+#   valokeila: true
+
+# Edellinen versio (pelkkä kuva):
+#   kuva: kuvat/artisti-puu.jpg
+#   kuva_alt: Jarkko Meretniemi polvillaan metsässä puun juurella
+#   kohta: "40% 45%"
+
+kuva: kuvat/hero-ranta.jpg
+video: video/hero-ranta.mp4
+kuva_alt: Jarkko Meretniemi kävelee harmaalla hiekkarannalla kohti kameraa
+kohta: "50% 30%"
+tekstuuri: rae
+etiketti: Kaihopoppia
+lause: Kaikki kaunis tekee vähän kipeää.
+valokeila: false

@@ -1,22 +1,73 @@
 # Meretniemen julkaisut. UUSIN YLIMMÄKSI.
-# Etusivu näyttää aina ylimmän, Laulut-sivu kaikki.
+# Etusivu näyttää aina ylimmän, Laulut- ja Medialle-sivut kaikki.
 #
-#   nimi        laulun nimi
-#   sivu        laulun oma sivu (kopioi kauneinta-mita-sus-on.html pohjaksi)
-#   kansi       kansikuva kuvat-kansiossa
-#   etiketti    pieni teksti etusivulla otsikon yläpuolella
-#   tyyppi      Single / EP / Albumi
-#   pvm         julkaisupäivä
-#   linkki      Feature.fm-linkki
-#   etusivulle  kuvaus etusivulle
-#   kuvaus      kuvaus Laulut-sivulle
+#   nimi              laulun nimi
+#   nimi_en           nimen käännös kansainväliselle medialle
+#   sivu              laulun oma sivu (kopioi edellinen biisisivu pohjaksi)
+#   kansi             kansikuva kuvat-kansiossa (n. 1200 px)
+#   kansi_hires       painokelpoinen kansi (Medialle-sivun lataus)
+#   kansi_koko        sen koko, jos muu kuin 3000 × 3000
+#   kansi_teksti      kuvateksti kannen alle Medialle-sivulla (valinnainen)
+#   etiketti          pieni teksti etusivulla otsikon yläpuolella
+#   tyyppi            Single / EP / Albumi
+#   pvm               julkaisupäivä
+#   kesto             esim. 2.53 (valinnainen)
+#   linkki            Feature.fm-linkki (ennen julkaisua pre-save, sen jälkeen kuuntelulinkki)
+#   spotify           Spotify-soittimen tunnus, esim. album/4abc… tai track/5uFW…
+#                     (Spotify for Artists → Music → Upcoming → Copy URI)
+#   julkaisuhetki     milloin biisisivu vaihtaa pre-save-napin Spotify-soittimeen
+#   etusivulle        kuvaus etusivulle
+#   kuvaus            kuvaus Laulut-sivulle
+#   kuvaus_en         kuvaus kansainväliselle medialle (Medialle-sivu)
+#   savellys_sanat, tuotanto, masterointi, julkaisija   krediitit
+#   mp3, flac         äänitiedostot medialle aani-kansiossa (valinnaiset)
+#   tiedote           tiedotesivu, tiedote_pdf sama PDF:nä, tiedote_otsikko
+#                     sen otsikko (Medialle-sivun tiedotelista)
+
+- nimi: "Ei kukaan niin kuin mä"
+  nimi_en: "No One Like Me"
+  sivu: ei-kukaan-niin-kuin-ma.html
+  kansi: kuvat/kansi-ei-kukaan.jpg
+  kansi_hires: kuvat/hires/meretniemi-kansi-ei-kukaan-2576.jpg
+  kansi_koko: "2576 × 2576"
+  etiketti: Uusi single
+  tyyppi: Single
+  pvm: 20.11.2026
+  linkki: https://ffm.to/eikukaan
+  spotify: ""
+  julkaisuhetki: "2026-11-20T00:00:00+02:00"
+  etusivulle: "Tästä biisistä Meretniemi syntyi. Se kertoo eron hetkestä, kun toinen on juuri lähtemässä."
+  kuvaus: "Laulu eron hetkestä, kun toinen on juuri lähtemässä – ja biisi, josta Meretniemi syntyi."
+  kuvaus_en: "A plea to someone halfway out the door: no one will ever love you the way I do. A cinematic, aching Finnish downtempo pop song built on intimate vocals, a dark-toned piano that wavers like worn cassette tape, and shimmering synths, with a crystalline guitar line lifting the chorus."
+  savellys_sanat: "Jukka Jahnukainen, Jarkko Meretniemi"
+  tuotanto: "Jukka Jahnukainen"
+  masterointi: "Henkka Niemistö"
+  julkaisija: "Has Been Records"
+  tiedote: tiedote-ei-kukaan-niin-kuin-ma.html
+  tiedote_pdf: tiedote/meretniemi-tiedote-ei-kukaan-niin-kuin-ma.pdf
+  tiedote_otsikko: "Tuottajaa harmitti, kun hyvä biisi meni ”nobodylle” – siitä syntyi artisti Meretniemi"
 
 - nimi: "Kauneinta mitä sus on"
+  nimi_en: "The Most Beautiful Thing About You"
   sivu: kauneinta-mita-sus-on.html
   kansi: kuvat/kansi.jpg
+  kansi_hires: kuvat/hires/meretniemi-kansi-3000.jpg
+  kansi_teksti: "Kuvassa Vallilan ala-asteen 1B:n oppilaita vuonna 1983. Mä olen tuo totinen polkkatukka ylärivin keskellä."
   etiketti: Esikoissingle
   tyyppi: Single
   pvm: 21.8.2026
+  kesto: "2.53"
   linkki: https://ffm.to/eooaa7e
+  spotify: track/5uFWMmhkkQYMwwBwFuhYBx
   etusivulle: "Tämä biisi kertoo siitä, miten moni meistä piilottaa omaa hehkuaan toisilta, jopa itseltään."
   kuvaus: "Laulu ihmiselle, joka piilottaa kauneimmat puolensa toisilta – ja jopa itseltään."
+  kuvaus_en: "A melancholically hopeful, cinematic Finnish-language downtempo pop song, built on intimate vocals, dark-toned piano and shimmering synth atmospheres. Spotify featured it on New Music Friday Finland in its release week, and Yle Radio Suomi played it on several programmes."
+  savellys_sanat: "Jukka Jahnukainen, Jarkko Meretniemi"
+  tuotanto: "Jukka Jahnukainen"
+  masterointi: "Henkka Niemistö"
+  julkaisija: "Has Been Records"
+  mp3: aani/Meretniemi-Kauneinta-mita-sus-on.mp3
+  flac: aani/Meretniemi-Kauneinta-mita-sus-on-44k16b.flac
+  tiedote: tiedote.html
+  tiedote_pdf: tiedote/meretniemi-tiedote.pdf
+  tiedote_otsikko: "Hittien kirjoittaja julkaisee ensimmäisen oman singlensä – 49-vuotiaana"

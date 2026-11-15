@@ -8,7 +8,8 @@ tarvitse asentaa omalle koneelle.
 
 | Mitä | Missä |
 |---|---|
-| Uusi julkaisu | `_data/julkaisut.yml` — lisää uusin ylimmäksi. Etusivu ja Laulut-sivu päivittyvät itse. |
+| Uusi julkaisu | `_data/julkaisut.yml` — lisää uusin ylimmäksi. Etusivu, Laulut-sivu ja Medialle-sivu (tiedotteet, julkaisut, bio, englanninkielinen teksti) päivittyvät itse. |
+| Etusivun ylin osio (hero) | `_data/etusivu.yml` — kuva ja lause. Vaihda muutaman kerran vuodessa. |
 | Uusi Pyhäkoulu-teksti listoihin | `_data/tekstit.yml` — uusin ylimmäksi. Pyhäkoulu-sivu ja etusivun kaksi esimerkkiä päivittyvät itse. |
 | Valikko (Laulut, Tarina, Pyhäkoulu) | `_includes/valikko.html` |
 | Alatunniste, somelinkit, sähköposti | `_includes/alatunniste.html` |
@@ -41,7 +42,9 @@ Alla olevat vanhemmat ohjeet on kirjoitettu ennen Jekylliä. Kun ne puhuvat
 |---|---|
 | `index.html` | Etusivu |
 | `laulut.html` | Julkaisujen listasivu |
-| `kauneinta-mita-sus-on.html` | Singlen oma sivu |
+| `kauneinta-mita-sus-on.html` | Esikoissinglen oma sivu |
+| `ei-kukaan-niin-kuin-ma.html` | Toisen singlen sivu — pohja seuraaville biisisivuille |
+| `tiedote.html`, `tiedote-ei-kukaan-niin-kuin-ma.html` | Tiedotteet (PDF:t kansiossa `tiedote/`) |
 | `pyhakoulu.html` | Tekstien hakemisto |
 | `teksti-viinerit.html` | Yksittäinen teksti — kopioi tämä uusille |
 | `kuvat/` | Kaikki kuvat |
@@ -115,21 +118,25 @@ kertosäe jää sinne yksin, mikä on sen oikea paikka.
 
 ## Seuraava single
 
-Kaksi vaihetta:
+1. **Uusi kohta** `_data/julkaisut.yml`-tiedoston alkuun. Kenttien selitykset
+   ovat tiedoston alussa. Etusivu, Laulut-sivu ja Medialle-sivu päivittyvät
+   siitä.
+2. **Uusi biisisivu** kopioimalla `ei-kukaan-niin-kuin-ma.html`. Vaihda
+   tietolohkon `title`, `description`, `kuva` ja `jsonld` sekä sivun
+   kertosäe, tarina ja sanat. Linkit, krediitit ja Spotify-soitin tulevat
+   `julkaisut.yml`-tiedostosta.
+3. **Kansikuvat**: noin 1200 px versio `kuvat/`-kansioon ja 3000 × 3000
+   versio `kuvat/hires/`-kansioon tiedostonimillä, jotka on merkitty
+   `julkaisut.yml`-tiedostoon.
+4. **Tiedote**: kopioi edellinen tiedotesivu ja lisää PDF `tiedote/`-kansioon.
 
-1. **Uusi biisisivu** kopioimalla `kauneinta-mita-sus-on.html`. Vaihda
-   tietolohkon `title`, `description` ja `jsonld` sekä sivun sisältö
-   (kertosäe, tarina, sanat, Spotify-tunnus soittimessa ja jakonapin osoite).
-2. **Uusi kohta** `_data/julkaisut.yml`-tiedoston alkuun. Etusivu ja
-   Laulut-sivu päivittyvät siitä.
+Biisisivu vaihtaa pre-save-napin Spotify-soittimeen itse julkaisuhetkellä
+(`julkaisuhetki` julkaisut.yml:ssä), joten julkaisupäivänä ei tarvitse
+tehdä mitään. Spotify-tunnuksen saa jo ennen julkaisua: Spotify for Artists
+→ Music → Upcoming → Copy URI. Muodosta siitä `album/TUNNUS`.
 
 Vanhat biisisivut jäävät paikoilleen — niihin linkitetään Spotifysta ja
-tiedotteista vielä vuosien päästä. Ainoa muutos vanhaan sivuun on se, että
-"Julkaistaan 21. elokuuta" muuttuu muotoon "Ilmestyi 21.8.2026" ja nappi
-ennakkotallennuksesta kuunteluksi.
-
-Medialle-sivun julkaisulohko kasvaa listaksi, uusin ensin. Toimittaja
-tarvitsee myös vanhat krediitit ja kansikuvat.
+tiedotteista vielä vuosien päästä.
 
 ### Värit
 

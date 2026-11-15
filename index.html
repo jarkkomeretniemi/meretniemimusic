@@ -1,8 +1,8 @@
 ---
 layout: "sivu"
 title: "Meretniemi — kaihopoppia | Jarkko Meretniemi"
-description: "Arjessa monet tunteet jäävät piiloon. Meretniemen kaihopopissa saa pysähtyä niiden ääreen. Kuuntele esikoissingle Kauneinta mitä sus on."
-kuva: "kuvat/luokkakuva.jpg"
+description: "Arjessa monet tunteet jäävät piiloon. Meretniemen kaihopopissa saa pysähtyä niiden ääreen."
+kuva: "kuvat/artisti-puu.jpg"
 kit: true
 jsonld: |
   {
@@ -35,18 +35,23 @@ jsonld: |
   }
 ---
 
-<section class="stage" id="stage">
+{% assign hero = site.data.etusivu %}<section class="stage" id="stage">
   {% include valikko.html %}
 
-  <div class="shot">
-    <img class="base" src="kuvat/luokkakuva.jpg" alt="">
-    <img class="lit" src="kuvat/luokkakuva.jpg" alt="Luokkakuva vuodelta 1983, yksi lapsi valaistuna">
+  {% if hero.valokeila %}<div class="shot">
+    <img class="base" src="{{ hero.kuva }}" alt="">
+    <img class="lit" src="{{ hero.kuva }}" alt="{{ hero.kuva_alt }}">
   </div>
-  <div class="veil"></div>
+  {% elsif hero.video %}<video class="kuva" autoplay muted loop playsinline preload="auto" poster="{{ hero.kuva }}" aria-label="{{ hero.kuva_alt }}"{% if hero.kohta %} style="object-position:{{ hero.kohta }}"{% endif %}>
+    <source src="{{ hero.video }}" type="video/mp4">
+  </video>
+  {% else %}<img class="kuva" src="{{ hero.kuva }}" alt="{{ hero.kuva_alt }}"{% if hero.kohta %} style="object-position:{{ hero.kohta }}"{% endif %}>
+  {% endif %}<div class="veil"></div>
+  {% if hero.tekstuuri == "rae" %}<div class="rae" aria-hidden="true"></div>{% elsif hero.tekstuuri == "rasteri" %}<div class="rasteri" aria-hidden="true"></div>{% endif %}
 
   <div class="caption">
-    <p class="eyebrow">Kaihopoppia</p>
-    <h1>Se mitä piilotat muilta on kauneinta mitä sus on.</h1>
+    <p class="eyebrow">{{ hero.etiketti }}</p>
+    <h1>{{ hero.lause }}</h1>
   </div>
   <span class="cue">Vieritä</span>
 </section>
