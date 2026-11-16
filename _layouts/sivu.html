@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+{%- comment -%} Jakokuva: sivun oma kuva, muuten julkaisun jakokuva tai kansi (biisisivu ja tiedote), muuten kasvokuva. {%- endcomment -%}
+{%- assign jako = page.kuva -%}
+{%- unless jako -%}{%- for j in site.data.julkaisut -%}{%- if j.sivu == page.path or j.tiedote == page.path -%}{%- assign jako = j.jakokuva | default: j.kansi -%}{%- break -%}{%- endif -%}{%- endfor -%}{%- endunless -%}
+{%- assign jako = jako | default: 'kuvat/artisti-katse.jpg' %}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.title }}</title>
@@ -13,11 +17,11 @@
 <meta property="og:url" content="https://meretniemimusic.fi/{{ page.path }}">
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:description" content="{{ page.description }}">
-<meta property="og:image" content="https://meretniemimusic.fi/{{ page.kuva | default: 'kuvat/kansi.jpg' }}">
+<meta property="og:image" content="https://meretniemimusic.fi/{{ jako }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:description" content="{{ page.description }}">
-<meta name="twitter:image" content="https://meretniemimusic.fi/{{ page.kuva | default: 'kuvat/kansi.jpg' }}">
+<meta name="twitter:image" content="https://meretniemimusic.fi/{{ jako }}">
 <meta name="theme-color" content="#FBFAF8">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">

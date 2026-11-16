@@ -8,6 +8,9 @@
 #   kansi_hires       painokelpoinen kansi (Medialle-sivun lataus)
 #   kansi_koko        sen koko, jos muu kuin 3000 × 3000
 #   kansi_teksti      kuvateksti kannen alle Medialle-sivulla (valinnainen)
+#   jakokuva          kevyt kansi (n. 800 px, alle 300 kt) linkkien esikatseluun
+#                     WhatsAppissa ym. Biisisivu ja tiedote käyttävät sitä itse.
+#                     Jos puuttuu, käytetään kansi-kuvaa.
 #   etiketti          pieni teksti etusivulla otsikon yläpuolella
 #   tyyppi            Single / EP / Albumi
 #   pvm               julkaisupäivä
@@ -28,6 +31,7 @@
   nimi_en: "No One Like Me"
   sivu: ei-kukaan-niin-kuin-ma.html
   kansi: kuvat/kansi-ei-kukaan.jpg
+  jakokuva: kuvat/jako-ei-kukaan.jpg
   kansi_hires: kuvat/hires/meretniemi-kansi-ei-kukaan-2576.jpg
   kansi_koko: "2576 × 2576"
   kansi_teksti: "Kuvassa isäni ja äitini heidän hääpäivänään. Isä tykkäsi tehdä äidille kortteja, joihin leikkasi valokuvista oman päänsä puhekuplan viereen."

@@ -22,7 +22,10 @@ Jokaisen sivun alussa on `---`-viivojen väliin kirjoitettu tietolohko:
 
 - `title`, `description` — näkyvät Googlessa ja jakoesikatseluissa. Kirjoitetaan
   kerran; sivupohja täyttää niillä myös og- ja twitter-tagit.
-- `kuva` — jakokuva, jos eri kuin `kuvat/kansi.jpg`
+- `kuva` — jakokuva linkkien esikatseluun (WhatsApp, Facebook ym.). Yleensä
+  tätä ei tarvita: biisisivu ja tiedote käyttävät julkaisun `jakokuva`-kuvaa
+  `julkaisut.yml`-tiedostosta, ja muut sivut kasvokuvaa `kuvat/artisti-katse.jpg`.
+  Pidä jakokuvat alle 300 kt, muuten WhatsApp ei näytä niitä.
 - `og_tyyppi` — jos eri kuin `website` (esim. `article`, `music.song`)
 - `valikko` — mikä valikon kohta näkyy aktiivisena
 - `kit: true` — sivulla on uutiskirjelomake
@@ -122,12 +125,13 @@ kertosäe jää sinne yksin, mikä on sen oikea paikka.
    ovat tiedoston alussa. Etusivu, Laulut-sivu ja Medialle-sivu päivittyvät
    siitä.
 2. **Uusi biisisivu** kopioimalla `ei-kukaan-niin-kuin-ma.html`. Vaihda
-   tietolohkon `title`, `description`, `kuva` ja `jsonld` sekä sivun
+   tietolohkon `title`, `description` ja `jsonld` sekä sivun
    kertosäe, tarina ja sanat. Linkit, krediitit ja Spotify-soitin tulevat
    `julkaisut.yml`-tiedostosta.
 3. **Kansikuvat**: noin 1200 px versio `kuvat/`-kansioon ja 3000 × 3000
    versio `kuvat/hires/`-kansioon tiedostonimillä, jotka on merkitty
-   `julkaisut.yml`-tiedostoon.
+   `julkaisut.yml`-tiedostoon. Lisäksi noin 800 px jakokuva (alle 300 kt)
+   kenttään `jakokuva` — se näkyy, kun biisisivun tai tiedotteen linkki jaetaan.
 4. **Tiedote**: kopioi edellinen tiedotesivu ja lisää PDF `tiedote/`-kansioon.
 
 Biisisivu vaihtaa pre-save-napin Spotify-soittimeen itse julkaisuhetkellä
