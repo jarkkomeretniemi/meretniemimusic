@@ -126,7 +126,7 @@ noindex: true
       </figure>
     </div>
     <div class="text rise" data-delay="120">
-      <p class="eyebrow">{% if forloop.first %}Julkaisut{% else %}Julkaisu{% endif %}</p>
+      <p class="eyebrow">{{ j.etiketti | default: j.tyyppi }}</p>
       <h2 class="title">{{ j.nimi }}</h2>
       <p class="credits">
         {{ j.tyyppi }}, {{ j.pvm }}{% if j.kesto %} · kesto {{ j.kesto }}{% endif %}<br>
