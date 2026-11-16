@@ -129,8 +129,9 @@ noindex: true
       <p class="eyebrow">{{ j.etiketti | default: j.tyyppi }}</p>
       <h2 class="title">{{ j.nimi }}</h2>
       <p class="credits">
-        {{ j.tyyppi }}, {{ j.pvm }}{% if j.kesto %} · kesto {{ j.kesto }}{% endif %}<br>
-        Sävellys ja sanat <strong>{{ j.savellys_sanat }}</strong><br>
+        Julkaisupäivä <strong>{{ j.pvm }}</strong><br>
+        {% if j.kesto %}Kesto <strong>{{ j.kesto }}</strong><br>
+        {% endif %}        Sävellys ja sanat <strong>{{ j.savellys_sanat }}</strong><br>
         Tuotanto ja miksaus <strong>{{ j.tuotanto }}</strong><br>
         Masterointi <strong>{{ j.masterointi }}</strong><br>
         Julkaisija <strong>{{ j.julkaisija }}</strong>
