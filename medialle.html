@@ -28,7 +28,6 @@ noindex: true
       <ul class="sisallys">
         <li><a href="#tiedote">Tiedotteet</a></li>
         <li><a href="#bio">Bio</a></li>
-        <li><a href="#haastattelu">Haastattelu</a></li>
         <li><a href="#sitaatit">Sanottua</a></li>
         <li><a href="#julkaisu">Julkaisut</a></li>
         <li><a href="#kuvat">Kuvat</a></li>
@@ -72,13 +71,13 @@ noindex: true
 
   <section class="spread mid" id="bio">
     <div class="text rise">
-      <div class="bio">
-        <p class="eyebrow">Bio, lyhyt</p>
+      <details class="bio" open>
+        <summary><span class="eyebrow">Bio, lyhyt</span><span class="avaa" aria-hidden="true"></span></summary>
         <div class="bio-teksti" id="bio-lyhyt">
           <p>Meretniemi on helsinkiläinen lauluntekijä Jarkko Meretniemi, joka on kirjoittanut yli vuosikymmenen ajan lauluja toisille artisteille, muun muassa Laura Närhelle ja Samuli Edelmannille. Omaa musiikkiaan hän on julkaissut elokuusta 2026 lähtien. Uusin single on <em>{{ uusin.nimi }}</em> ({{ uusin.pvm }}).</p>
         </div>
         <button type="button" class="kopioi" data-kohde="bio-lyhyt"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1"/><path d="M3.5 10.5h-1v-8h8v1"/></svg><span>Kopioi</span></button>
-      </div>
+      </details>
       <details class="bio">
         <summary><span class="eyebrow">Bio, keskipitkä</span><span class="avaa" aria-hidden="true"></span></summary>
         <div class="bio-teksti" id="bio-keskipitka">
@@ -100,24 +99,6 @@ noindex: true
       </details>
     </div>
   </section>
-
-{%- assign taustat = site.data.kohtaamiset | where_exp: "k", "k.medialle" %}
-{%- if taustat.size > 0 %}
-  <section class="spread mid" id="haastattelu">
-    <div class="text rise">
-      <p class="eyebrow">Haastattelu taustaksi</p>
-      {%- for k in taustat %}
-      <h2 class="title" style="text-wrap:normal">{{ k.otsikko }}</h2>
-      <p>{{ k.kuvaus }}</p>
-      <button type="button" class="video" data-youtube="{{ k.youtube }}" aria-label="Katso video: {{ k.otsikko }}">
-        <img src="https://i.ytimg.com/vi/{{ k.youtube }}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
-        <span class="video-toista" aria-hidden="true"></span>
-      </button>
-      {%- endfor %}
-      <p style="margin-top:2rem"><a class="link" href="kohtaamisia.html">Kaikki keskustelut</a></p>
-    </div>
-  </section>
-{%- endif %}
 
   <section class="spread mid" id="sitaatit">
     <div class="text rise">
@@ -175,7 +156,26 @@ noindex: true
 
 {%- comment -%} Kuvat-osio saa sävyn silloin, kun viimeinen julkaisu on ilman sävyä, jotta värit vuorottelevat. {%- endcomment -%}
 {%- assign julkaisuja = site.data.julkaisut | size %}{% assign parillinen = julkaisuja | modulo: 2 %}
-  <section class="spread wide{% if parillinen == 0 %} tint{% endif %}" id="kuvat">
+{%- comment %} Toonit vuorottelevat: julkaisut, haastattelu ja kuvat eivät koskaan ole kaksi sävytettyä peräkkäin. {% endcomment %}
+{%- assign taustat = site.data.kohtaamiset | where_exp: "k", "k.medialle" %}
+{%- if taustat.size > 0 %}
+  <section class="spread mid{% if parillinen == 0 %} tint{% endif %}" id="haastattelu">
+    <div class="text rise">
+      <p class="eyebrow">55 minuutin haastattelu</p>
+      {%- for k in taustat %}
+      <h2 class="title" style="text-wrap:normal">{{ k.otsikko }}</h2>
+      <p>{{ k.kuvaus }}</p>
+      <button type="button" class="video" data-youtube="{{ k.youtube }}" aria-label="Katso video: {{ k.otsikko }}">
+        <img src="https://i.ytimg.com/vi/{{ k.youtube }}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+        <span class="video-toista" aria-hidden="true"></span>
+      </button>
+      {%- endfor %}
+      <p style="margin-top:2rem"><a class="link" href="kohtaamisia.html">Kaikki keskustelut</a></p>
+    </div>
+  </section>
+{%- endif %}
+{%- assign kuvat_tooni = parillinen %}{% if taustat.size > 0 %}{% assign kuvat_tooni = julkaisuja | plus: 1 | modulo: 2 %}{% endif %}
+  <section class="spread wide{% if kuvat_tooni == 0 %} tint{% endif %}" id="kuvat">
     <div class="text rise">
       <p class="eyebrow">Painokelpoiset kuvat</p>
       <div class="grid">
