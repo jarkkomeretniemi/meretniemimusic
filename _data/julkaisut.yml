@@ -23,7 +23,8 @@
 #   kuvaus            kuvaus Laulut-sivulle
 #   kuvaus_en         kuvaus kansainväliselle medialle (Medialle-sivu)
 #   savellys_sanat, tuotanto, masterointi, julkaisija   krediitit
-#   mp3, flac         äänitiedostot medialle aani-kansiossa (valinnaiset)
+#   mp3, wav, flac    äänitiedostot medialle aani-kansiossa (valinnaiset). Medialle-
+#                     sivulla näkyy WAV (radiot tarvitsevat sen), FLAC vain jos WAV puuttuu.
 #   tiedote           tiedotesivu, tiedote_pdf sama PDF:nä, tiedote_otsikko
 #                     sen otsikko (Medialle-sivun tiedotelista)
 
@@ -50,6 +51,7 @@
   masterointi: "Henkka Niemistö"
   julkaisija: "Has Been Records"
   mp3: aani/Meretniemi-Ei-kukaan-niin-kuin-ma.mp3
+  wav: aani/Meretniemi-Ei-kukaan-niin-kuin-ma-44k16b.wav
   flac: aani/Meretniemi-Ei-kukaan-niin-kuin-ma-44k16b.flac
   tiedote: tiedote-ei-kukaan-niin-kuin-ma.html
   tiedote_pdf: tiedote/meretniemi-tiedote-ei-kukaan-niin-kuin-ma.pdf
@@ -75,6 +77,7 @@
   masterointi: "Henkka Niemistö"
   julkaisija: "Has Been Records"
   mp3: aani/Meretniemi-Kauneinta-mita-sus-on.mp3
+  wav: aani/Meretniemi-Kauneinta-mita-sus-on-44k16b.wav
   flac: aani/Meretniemi-Kauneinta-mita-sus-on-44k16b.flac
   tiedote: tiedote.html
   tiedote_pdf: tiedote/meretniemi-tiedote.pdf

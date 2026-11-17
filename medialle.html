@@ -144,13 +144,15 @@ noindex: true
 {%- endif %}
 
       <p style="margin-top:1.75rem">
-        {% if j.flac %}<a class="link" href="{{ j.flac }}" download>Lataa FLAC</a>
+        {% if j.wav %}<a class="link" href="{{ j.wav }}" download>Lataa WAV</a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        {% elsif j.flac %}<a class="link" href="{{ j.flac }}" download>Lataa FLAC</a>
         &nbsp;&nbsp;·&nbsp;&nbsp;
         {% endif %}{% if j.mp3 %}<a class="link" href="{{ j.mp3 }}" download>Lataa MP3</a>
         &nbsp;&nbsp;·&nbsp;&nbsp;
         {% endif %}<a class="link" href="{{ j.sivu }}">Sanat</a>
       </p>
-      <p class="fineprint">{% if j.flac %}FLAC on häviötön, 44,1 kHz / 16 bit. Tarvitsetko WAV-tiedoston tai korkeamman resoluution masterin? Laita viestiä.{% else %}Tarvitsetko äänitiedoston ennakkoon? Laita viestiä.{% endif %}</p>
+      <p class="fineprint">{% if j.wav %}WAV on masteri sellaisenaan, 44,1 kHz / 16 bit. Tarvitsetko korkeamman resoluution masterin? Laita viestiä.{% elsif j.flac %}FLAC on häviötön, 44,1 kHz / 16 bit. Tarvitsetko WAV-tiedoston tai korkeamman resoluution masterin? Laita viestiä.{% else %}Tarvitsetko äänitiedoston ennakkoon? Laita viestiä.{% endif %}</p>
     </div>
   </section>
 {%- endfor %}
