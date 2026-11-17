@@ -497,3 +497,9 @@ audio::-webkit-media-controls-panel{background:var(--paper)}
   font-family:var(--sans);font-size:.8125rem;letter-spacing:.01em;color:var(--accent);transition:color .25s}
 .kopioi:hover{color:var(--accent-deep)}
 .kopioi svg{width:.95rem;height:.95rem;fill:none;stroke:currentColor;stroke-width:1.2}
+
+/* Medialle: Tarinoita laulujen takaa -lista */
+.tarinat{margin:2.25rem 0 0}
+.tarinat dt{font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.02em;color:var(--ink);margin-top:1.75rem}
+.tarinat dt:first-child{margin-top:0}
+.tarinat dd{margin:.4rem 0 0;color:var(--ink-soft)}
