@@ -503,3 +503,7 @@ audio::-webkit-media-controls-panel{background:var(--paper)}
 .tarinat dt{font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.02em;color:var(--ink);margin-top:1.75rem}
 .tarinat dt:first-child{margin-top:0}
 .tarinat dd{margin:.4rem 0 0;color:var(--ink-soft)}
+
+/* Medialle: haastatteluvideo tarinalistan jatkona */
+.haastattelu-video{border-top:1px solid var(--rule);margin-top:4rem;padding-top:2.75rem}
+.alaotsikko{font-family:var(--serif);font-size:clamp(1.45rem,1.1rem + 1.3vw,2.1rem);line-height:1.18;font-weight:400;letter-spacing:-.005em;margin:0 0 1.1rem}

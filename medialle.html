@@ -100,27 +100,6 @@ noindex: true
     </div>
   </section>
 
-  <section class="spread mid tint" id="tarinat">
-    <div class="text rise">
-      <p class="eyebrow">Haastattelun pohjaksi</p>
-      <h2 class="title">Tarinoita laulujen takaa</h2>
-      <dl class="tarinat">
-        <dt>Mummin kirkkokuoro</dt>
-        <dd>Aikoinaan mun mummiani kiellettiin laulamasta kirkkokuorossa. Se on yksi syy, miksi musta tuli musiikintekijä.</dd>
-        <dt>Punainen polkuauto</dt>
-        <dd>Nelivuotiaana sain Hakaniemen Elannon leluosastolla lapsuuteni ainoan itkupotkuraivarin. Sen jälkeen uskoin, etten voi koskaan saada sitä, mitä eniten haluan. Siksi multa vei 49 vuotta ryhtyä artistiksi.</dd>
-        <dt>Mistä popin teko alkoi</dt>
-        <dd>Aholansaaren rippileirin iltaohjelmassa lauloin kaverin kanssa kaksiäänisesti Eric Claptonin <em>Wonderful Tonightin</em>. Se, miten tytöt reagoivat lauluun, oli tärkeä sysäys alkaa tehdä omaa musiikkia.</dd>
-        <dt>Viinerit</dt>
-        <dd>Muutama vuosi sitten kirjoitin someen viikoittain viineriarvioita, kunnes ystävä teki huomion, joka paljasti, mitä oikeasti hain leipomosta – isän rakkautta.</dd>
-        <dt>Viha tuli neljä vuotta myöhässä</dt>
-        <dd>Luulin käsitelleeni avioeroni, kunnes eräänä päivänä aloin huutaa puhelimeen täydessä junassa.</dd>
-        <dt>Kaksi kertaa ei</dt>
-        <dd>Vuosia ennen kuin julkaisin ekan biisini, mulle tarjottiin levytyssopimusta, peräti kahdesti.</dd>
-      </dl>
-    </div>
-  </section>
-
   <section class="spread mid" id="sitaatit">
     <div class="text rise">
       <p class="eyebrow">Näin Meretniemen musiikista on sanottu</p>
@@ -182,23 +161,39 @@ noindex: true
 {%- assign julkaisuja = site.data.julkaisut | size %}{% assign parillinen = julkaisuja | modulo: 2 %}
 {%- comment %} Toonit vuorottelevat: julkaisut, haastattelu ja kuvat eivät koskaan ole kaksi sävytettyä peräkkäin. {% endcomment %}
 {%- assign taustat = site.data.kohtaamiset | where_exp: "k", "k.medialle" %}
-{%- if taustat.size > 0 %}
   <section class="spread mid{% if parillinen == 0 %} tint{% endif %}" id="haastattelu">
     <div class="text rise">
-      <p class="eyebrow">55 minuutin haastattelu</p>
-      {%- for k in taustat %}
-      <h2 class="title" style="text-wrap:normal">{{ k.otsikko }}</h2>
-      <p>{{ k.kuvaus }}</p>
-      <button type="button" class="video" data-youtube="{{ k.youtube }}" aria-label="Katso video: {{ k.otsikko }}">
-        <img src="https://i.ytimg.com/vi/{{ k.youtube }}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
-        <span class="video-toista" aria-hidden="true"></span>
-      </button>
-      {%- endfor %}
-      <p style="margin-top:2rem"><a class="link" href="kohtaamisia.html">Kaikki keskustelut</a></p>
+      <p class="eyebrow">Haastatteluun</p>
+      <h2 class="title">Tarinoita laulujen takaa</h2>
+      <dl class="tarinat">
+        <dt>Mummin kirkkokuoro</dt>
+        <dd>Aikoinaan mun mummiani kiellettiin laulamasta kirkkokuorossa. Se on yksi syy, miksi musta tuli musiikintekijä.</dd>
+        <dt>Punainen polkuauto</dt>
+        <dd>Nelivuotiaana sain Hakaniemen Elannon leluosastolla lapsuuteni ainoan itkupotkuraivarin. Sen jälkeen uskoin, etten voi koskaan saada sitä, mitä eniten haluan. Siksi multa vei 49 vuotta ryhtyä artistiksi.</dd>
+        <dt>Mistä popin teko alkoi</dt>
+        <dd>Aholansaaren rippileirin iltaohjelmassa lauloin kaverin kanssa kaksiäänisesti Eric Claptonin <em>Wonderful Tonightin</em>. Se, miten tytöt reagoivat lauluun, sysäsi mut tekemään omaa musiikkia.</dd>
+        <dt>Viinerit</dt>
+        <dd>Muutama vuosi sitten kirjoitin someen viikoittain viineriarvioita, kunnes ystävä teki huomion, joka paljasti, mitä oikeasti hain leipomosta – isän rakkautta.</dd>
+        <dt>Viha tuli neljä vuotta myöhässä</dt>
+        <dd>Luulin käsitelleeni avioeroni, kunnes eräänä päivänä aloin huutaa puhelimeen täydessä junassa.</dd>
+        <dt>Kaksi kertaa ei</dt>
+        <dd>Vuosia ennen kuin julkaisin ekan biisini, mulle tarjottiin levytyssopimusta, peräti kahdesti.</dd>
+      </dl>
+{%- for k in taustat %}
+      <div class="haastattelu-video">
+        <p class="eyebrow">55 minuutin haastattelu</p>
+        <h3 class="alaotsikko">{{ k.otsikko }}</h3>
+        <p>{{ k.kuvaus }}</p>
+        <button type="button" class="video" data-youtube="{{ k.youtube }}" aria-label="Katso video: {{ k.otsikko }}">
+          <img src="https://i.ytimg.com/vi/{{ k.youtube }}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+          <span class="video-toista" aria-hidden="true"></span>
+        </button>
+        <p style="margin-top:2rem"><a class="link" href="kohtaamisia.html">Kaikki keskustelut</a></p>
+      </div>
+{%- endfor %}
     </div>
   </section>
-{%- endif %}
-{%- assign kuvat_tooni = parillinen %}{% if taustat.size > 0 %}{% assign kuvat_tooni = julkaisuja | plus: 1 | modulo: 2 %}{% endif %}
+{%- assign kuvat_tooni = julkaisuja | plus: 1 | modulo: 2 %}
   <section class="spread wide{% if kuvat_tooni == 0 %} tint{% endif %}" id="kuvat">
     <div class="text rise">
       <p class="eyebrow">Painokelpoiset kuvat</p>
